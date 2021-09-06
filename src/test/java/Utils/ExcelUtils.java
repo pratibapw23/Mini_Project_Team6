@@ -1,12 +1,14 @@
 package Utils;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
 	static XSSFWorkbook workbook;
+	
 	static XSSFSheet sheet;
 	
 	public static String getUsername() throws IOException
@@ -25,6 +27,30 @@ public class ExcelUtils {
 		return password;
 
 	}
+	public static String getExpectedColor() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Properties");
+		String ExpectedColor=sheet.getRow(1).getCell(0).getStringCellValue();
+		return ExpectedColor;
+	}
+	public static String[] getStringPasswords() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		
+		String pass[]=new String[2];
+		pass[0]=sheet.getRow(2).getCell(2).getStringCellValue();
+		pass[1]=sheet.getRow(3).getCell(2).getStringCellValue();
+		return pass; 
+	}
+	public static String getNumericPasswords() throws IOException
+	{
+		double numericPassw=sheet.getRow(1).getCell(2).getNumericCellValue();
+		String s=Double.toString(numericPassw);
+		return s;
+	}
+	
 	
 
 }
