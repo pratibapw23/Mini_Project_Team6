@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="Pass_Validate01_testng(failed)">
-    <groups>
-      <run>
-        <include name="Login"/>
-      </run>
-    </groups>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="com.loginTests.Pass_Validate_01">
         <methods>
-          <include name="Vrfy_Uname"/>
+          <include name="afterMethod"/>
+          <include name="Pass_Rules"/>
+          <include name="beforeMethod"/>
         </methods>
       </class> <!-- com.loginTests.Pass_Validate_01 -->
     </classes>
-  </test> <!-- Pass_Validate01_testng(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
