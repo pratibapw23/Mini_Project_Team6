@@ -43,42 +43,6 @@ public class Pass_Validate_01 {
 	  String ExpectedName=FullName[0];
 	  
 	  assertEquals(ExpectedName, ActualName);
-	  
-  }
-  @Test
-  public void Password_Rules() throws InterruptedException, IOException
-  {
-	  String[] passwords=ExcelUtils.getStringPasswords();
-	  
-	  driver.findElement(By.linkText("Register")).click();
-	  driver.findElement(By.id("psw")).sendKeys(ExcelUtils.getNumericPasswords());
-	  Thread.sleep(2000);
-	  //String TitleAttributes=driver.findElement(By.id("psw")).getAttribute("title");
-	WebElement elementCap=driver.findElement(By.id("capital"));
-	WebElement elementLet=driver.findElement(By.id("letter"));
-	WebElement elementLen=driver.findElement(By.id("length"));
-	String actualcolorCap=(elementCap.getCssValue("color"));
-	String actualcolorLet=(elementLet.getCssValue("color"));
-	String actualcolorLen=(elementLen.getCssValue("color"));
-	
-	assertEquals(ExcelUtils.getExpectedColor(), actualcolorCap);
-	assertEquals(ExcelUtils.getExpectedColor(), actualcolorLet);
-	assertEquals(ExcelUtils.getExpectedColor(), actualcolorLen);
-	Thread.sleep(2000);
-	driver.findElement(By.id("psw")).clear();
-	driver.findElement(By.id("psw")).sendKeys(passwords[0]);
-	assertEquals(ExcelUtils.getExpectedColor(), actualcolorCap);
-	assertEquals(ExcelUtils.getExpectedColor(), actualcolorLen);
-	Thread.sleep(2000);
-	driver.findElement(By.id("psw")).clear();
-	driver.findElement(By.id("psw")).sendKeys(passwords[1]);
-	WebElement elementNumber=driver.findElement(By.id("number"));
-	String actualcolorNum=(elementNumber.getCssValue("color"));
-	assertEquals(ExcelUtils.getExpectedColor(), actualcolorNum);
-	Thread.sleep(2000);
-
-	
-	  
   } 
   @BeforeMethod
   public void beforeMethod() throws IOException {
