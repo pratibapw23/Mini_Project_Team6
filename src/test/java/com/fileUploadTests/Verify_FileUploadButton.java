@@ -36,8 +36,9 @@ public class Verify_FileUploadButton {
 	  String path=prop.getProperty("scriptPath");
 	  Process p=Runtime.getRuntime().exec(path);
 	  p.waitFor();
-	  if(p.exitValue()==1)
-		  System.out.println("Window is opened to upload file");
+
+	  if(p.exitValue()==0)
+		  System.out.println("Window is opened to upload file (Process completed correctly)");
 	  else {
 	        System.out.println("Failed to open window");
 	    }

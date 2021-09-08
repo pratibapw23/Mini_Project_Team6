@@ -29,5 +29,10 @@ WebDriver driver;
 		element=driver.findElement(By.name("files"));//click
 		return element;
 	}
+	public static WebElement UploadFileButton(WebDriver driver)
+	{
+		element=driver.findElement(By.linkText("Upload File"));
+		return element;
+	}
 
 }
