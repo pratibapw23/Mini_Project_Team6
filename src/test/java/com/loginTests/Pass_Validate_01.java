@@ -1,4 +1,6 @@
 package com.loginTests;
+import pageObjects.LoginPage;
+import Utils.WebDriverProperties;
 import Utils.ExcelUtils;
 import org.testng.annotations.Test;
 
@@ -24,42 +26,33 @@ public class Pass_Validate_01 {
 	ExcelUtils obj=new ExcelUtils();
 	
 	WebDriver driver;
-
   
   @Test//(groups= {"Login"})
-  public void Vrfy_Uname() throws IOException, InterruptedException {
-	  driver.findElement(By.xpath("//*[@id=\"nav-menu\"]/ul/li[2]/a")).click();
-	  driver.findElement(By.name("username")).sendKeys(ExcelUtils.getUsername());
-	  driver.findElement(By.name("password")).sendKeys(ExcelUtils.getPassword());
-	  driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[3]/div/button")).submit();
-	  Thread.sleep(2000);
-	  
-	  String name[]=driver.findElement(By.xpath("/html/body/div[1]")).getText().split(" ");
-	  String ActualName=name[1];
-	 
-	  
-	  driver.findElement(By.linkText("Profile")).click();
-	  String FullName[]=driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div[1]/div/div[1]/div[2]")).getText().split(" ");
-	  String ExpectedName=FullName[0];
+  public void verifyUsername() throws IOException, InterruptedException {
+	 LoginPage.loginButton(driver).click();
+	 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+	 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
+	 LoginPage.SignInButton(driver).submit();
+	 Thread.sleep(2000);
+	 String name[]=LoginPage.findFullName(driver).getText().split(" ");
+	 String ActualName=name[1];
+	 LoginPage.profileLink(driver).click();
+	 String FullName[]=LoginPage.fullNameInProfile(driver).getText().split(" ");
+	 String ExpectedName=FullName[0];
 	  
 	  assertEquals(ExpectedName, ActualName);
   } 
   @BeforeMethod
   public void beforeMethod() throws IOException {
-	  WebDriverManager.chromedriver().setup();
-	  driver=new ChromeDriver();
-	 FileReader reader=new FileReader("Info.properties");
-	 Properties prop=new Properties();
-	 prop.load(reader); 
-	 String url=prop.getProperty("url");
-	 driver.get(url);
-	 driver.manage().window().maximize();
+	  driver=WebDriverProperties.setChromeDriverProperties();
   }
 
   @AfterMethod
   public void afterMethod() {
 	  driver.quit();
   }
+ 
+  
   
 
 }

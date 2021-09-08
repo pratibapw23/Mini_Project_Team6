@@ -4,7 +4,10 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
+	WebDriver driver;
 	
 	static WebElement element=null;
 	public static WebElement loginButton(WebDriver driver) throws IOException
@@ -42,5 +45,6 @@ public class LoginPage {
 		element=driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div[1]/div/div[1]/div[2]"));
 		return element;
 	}
+	
 
 }

@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30096" started-at="2021-09-07T09:28:11 IST" finished-at="2021-09-07T09:28:41 IST">
+  <suite name="Default suite" duration-ms="17669" started-at="2021-09-08T10:12:50 IST" finished-at="2021-09-08T10:13:07 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30096" started-at="2021-09-07T09:28:11 IST" finished-at="2021-09-07T09:28:41 IST">
-      <class name="com.registerTests.Password_Rules_01">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.registerTests.Password_Rules_01@75881071]" name="beforeMethod" is-config="true" duration-ms="17017" started-at="2021-09-07T09:28:11 IST" finished-at="2021-09-07T09:28:28 IST">
+    <test name="Default test" duration-ms="17669" started-at="2021-09-08T10:12:50 IST" finished-at="2021-09-08T10:13:07 IST">
+      <class name="com.fileUploadTests.Verify_FileUploadButton">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.fileUploadTests.Verify_FileUploadButton@4e718207]" name="beforeMethod" is-config="true" duration-ms="5714" started-at="2021-09-08T10:12:50 IST" finished-at="2021-09-08T10:12:55 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="Password_Rules()[pri:0, instance:com.registerTests.Password_Rules_01@75881071]" name="Password_Rules" duration-ms="11406" started-at="2021-09-07T09:28:28 IST" finished-at="2021-09-07T09:28:40 IST">
+        <test-method status="PASS" signature="f()[pri:0, instance:com.fileUploadTests.Verify_FileUploadButton@4e718207]" name="f" duration-ms="11829" started-at="2021-09-08T10:12:55 IST" finished-at="2021-09-08T10:13:07 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Password_Rules -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.registerTests.Password_Rules_01@75881071]" name="afterMethod" is-config="true" duration-ms="1599" started-at="2021-09-07T09:28:40 IST" finished-at="2021-09-07T09:28:41 IST">
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.fileUploadTests.Verify_FileUploadButton@4e718207]" name="afterMethod" is-config="true" duration-ms="84" started-at="2021-09-08T10:13:07 IST" finished-at="2021-09-08T10:13:07 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.registerTests.Password_Rules_01 -->
+      </class> <!-- com.fileUploadTests.Verify_FileUploadButton -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

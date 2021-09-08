@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.loginTests.Pass_Validate_01">
+      <class name="com.fileUploadTests.Verify_FileUploadButton">
         <methods>
           <include name="afterMethod"/>
-          <include name="Pass_Rules"/>
+          <include name="f"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.loginTests.Pass_Validate_01 -->
+      </class> <!-- com.fileUploadTests.Verify_FileUploadButton -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
