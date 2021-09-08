@@ -17,5 +17,52 @@ public class RegisterPage {
 		element=driver.findElement(By.id("psw"));
 		return element;
 	}
-
+	
+	public static WebElement username(WebDriver driver)
+	{
+		element=driver.findElement(By.name("username"));
+		return element;
+	}
+	
+	public static WebElement firstName(WebDriver driver)
+	{
+		element=driver.findElement(By.name("first_name"));
+		return element;
+	}
+	
+	public static WebElement lastName(WebDriver driver)
+	{
+		element=driver.findElement(By.name("last_name"));
+		return element;
+	}
+	
+	public static WebElement email(WebDriver driver)
+	{
+		element=driver.findElement(By.id("email"));
+		return element;
+	}
+	
+	public static WebElement passwordTextbox2(WebDriver driver)
+	{
+		element=driver.findElement(By.name("password2"));
+		return element;
+	}
+	
+	public static WebElement mobileNumber(WebDriver driver)
+	{
+		element=driver.findElement(By.name("mobile_number"));
+		return element;
+	}
+	
+	public static WebElement gender(WebDriver driver)
+	{
+		element=driver.findElement(By.name("gender"));
+		return element;
+	}
+	
+	public static WebElement registerSubmit(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("/html/body/form/div/div[11]/input"));
+		return element;
+	}
 }
