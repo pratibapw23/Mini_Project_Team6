@@ -42,7 +42,7 @@ public class TC_Register_Userid_1 {
 		RegisterPage.mobileNumber(driver).sendKeys("8787878787");
 		Select genderUi = new Select(RegisterPage.gender(driver));
 		genderUi.selectByValue("Female");
-		RegisterPage.registerSubmit(driver).click();
+		RegisterPage.registerSubmit(driver).submit();
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 		assertEquals(driver.getTitle(), "Login to iDrive");
 		
