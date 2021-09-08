@@ -10,6 +10,11 @@
        <exclude name="check_windowOpen"/>
        </methods>
        </class>
+       <class name="com.registerTests.Verify_Email_01">
+       <methods>
+        <exclude name="Verify_Email_01"/>
+       </methods>
+       </class>
     </classes>
   </test> <!-- Pass_Validate01_testng -->
 </suite> <!-- Suite -->

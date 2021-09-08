@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\pageObjects\LoginPage.java
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\Utils\ExcelUtils.java
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\com\loginTests\Pass_Validate_01.java
@@ -7,14 +6,3 @@ C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\Utils\WebDriverPro
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\com\registerTests\Password_Rules_01.java
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\com\fileUploadTests\Verify_FileUploadButton.java
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\pageObjects\DashboardPage.java
-=======
-C:\Users\admin\git\Mini_Project_Team6\src\test\java\com\mini_project_team6\mini_project_team6\AppTest.java
-C:\Users\admin\git\Mini_Project_Team6\src\test\java\pageObjects\LoginPage.java
-C:\Users\admin\git\Mini_Project_Team6\src\test\java\Utils\ExcelUtils.java
-C:\Users\admin\git\Mini_Project_Team6\src\test\java\com\loginTests\Pass_Validate_01.java
-C:\Users\admin\git\Mini_Project_Team6\src\test\java\pageObjects\DashboardPage.java
-C:\Users\admin\git\Mini_Project_Team6\src\test\java\com\registerTests\Password_Rules_01.java
-C:\Users\admin\git\Mini_Project_Team6\src\test\java\com\fileUploadTests\Verify_FileUploadButton.java
-C:\Users\admin\git\Mini_Project_Team6\src\test\java\pageObjects\RegisterPage.java
-C:\Users\admin\git\Mini_Project_Team6\src\test\java\Utils\WebDriverProperties.java
->>>>>>> refs/remotes/origin/master

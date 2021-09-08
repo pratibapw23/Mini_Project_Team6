@@ -50,6 +50,29 @@ public class ExcelUtils {
 		String s=Double.toString(numericPassw);
 		return s;
 	}
+	public static String[] getRegistrationDetails() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		String RegistrationDetails[]=new String[6];
+		RegistrationDetails[0]=sheet.getRow(6).getCell(0).getStringCellValue();
+		RegistrationDetails[1]=sheet.getRow(6).getCell(1).getStringCellValue();
+		RegistrationDetails[2]=sheet.getRow(6).getCell(2).getStringCellValue();
+		RegistrationDetails[3]=sheet.getRow(6).getCell(3).getStringCellValue();
+		RegistrationDetails[4]=sheet.getRow(6).getCell(4).getStringCellValue();
+		RegistrationDetails[5]=sheet.getRow(6).getCell(5).getStringCellValue();
+
+		return RegistrationDetails;
+		
+	}
+	public static double getMobileNo() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		double mobileno=sheet.getRow(6).getCell(7).getNumericCellValue();
+		
+		return mobileno;
+	}
 	
 	
 

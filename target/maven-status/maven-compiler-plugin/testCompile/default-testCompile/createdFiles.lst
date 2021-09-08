@@ -1,2 +1,8 @@
+pageObjects\RegisterPage.class
+pageObjects\LoginPage.class
+Utils\WebDriverProperties.class
 com\loginTests\Pass_Validate_01.class
-com\mini_project_team6\mini_project_team6\AppTest.class
+com\registerTests\Password_Rules_01.class
+Utils\ExcelUtils.class
+com\fileUploadTests\Verify_FileUploadButton.class
+pageObjects\DashboardPage.class
