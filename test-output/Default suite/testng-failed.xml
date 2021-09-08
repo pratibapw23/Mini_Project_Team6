@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.loginTests.Pass_Validate_01">
+      <class name="com.fileUploadTests.Verify_FileUploadButton">
         <methods>
           <include name="afterMethod"/>
-          <include name="Pass_Rules"/>
+          <include name="check_windowOpen"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.loginTests.Pass_Validate_01 -->
+      </class> <!-- com.fileUploadTests.Verify_FileUploadButton -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
