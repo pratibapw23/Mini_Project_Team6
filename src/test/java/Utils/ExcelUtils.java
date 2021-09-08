@@ -7,6 +7,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
+	public static final CharSequence FirstName_UpdateProfile = null;
+
 	static XSSFWorkbook workbook;
 	
 	static XSSFSheet sheet;
@@ -50,7 +52,42 @@ public class ExcelUtils {
 		String s=Double.toString(numericPassw);
 		return s;
 	}
+	public static String getExpectedSignUpTitle() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		String ExpectedSignUpTitle=sheet.getRow(1).getCell(4).getStringCellValue();
+		return ExpectedSignUpTitle;
+	}
 	
-	
+	public static String getUserName_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		String UserName_UpdateProfile=sheet.getRow(5).getCell(0).getStringCellValue();
+		return UserName_UpdateProfile;
+	}
+	public static String getPassword_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		String Password_UpdateProfile=sheet.getRow(5).getCell(1).getStringCellValue();
+		return Password_UpdateProfile;
+	}
+	public static String getFirstName_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		String FirstName_UpdateProfile=sheet.getRow(6).getCell(0).getStringCellValue();
+		return FirstName_UpdateProfile;
+	}
+	public static String getLastName_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		String LastName_UpdateProfile=sheet.getRow(7).getCell(0).getStringCellValue();
+		return LastName_UpdateProfile;
+	}
+
 
 }
