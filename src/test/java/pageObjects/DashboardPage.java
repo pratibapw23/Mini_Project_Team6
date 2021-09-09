@@ -34,5 +34,10 @@ WebDriver driver;
 		element=driver.findElement(By.linkText("Upload File"));
 		return element;
 	}
+	public static WebElement deleteButton(WebDriver driver)
+	{
+		element=driver.findElement(By.linkText("Delete"));
+		return element;
+	}
 
 }

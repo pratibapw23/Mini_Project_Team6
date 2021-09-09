@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.registerTests.TC_Register_Userid_1">
+      <class name="com.registerTests.Register_18">
         <methods>
+          <include name="Vrfy_Regdata"/>
           <include name="beforeMethod"/>
-          <include name="Userid_001"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- com.registerTests.TC_Register_Userid_1 -->
+      </class> <!-- com.registerTests.Register_18 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

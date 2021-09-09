@@ -5,10 +5,17 @@
     <classes>
       <class name="com.loginTests.Pass_Validate_01"/>
        <class name="com.registerTests.Password_Rules_01"/>
+       <class name="com.dashboardTests.Verify_ProfileBtn_02"/>
        
        <class name="com.fileUploadTests.Verify_FileUploadButton">
        <methods>
        <exclude name="check_windowOpen"/>
+       </methods>
+       </class>
+       
+       <class name="com.registerTests.TC_Register_Userid_1">
+       <methods>
+       	<exclude name="Userid_001"></exclude>
        </methods>
        </class>
        

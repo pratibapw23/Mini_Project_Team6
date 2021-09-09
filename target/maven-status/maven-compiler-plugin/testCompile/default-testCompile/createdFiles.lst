@@ -1,8 +1,13 @@
+com\dashboardTests\Verify_DeleteBtn_09.class
 pageObjects\RegisterPage.class
+com\registerTests\Verify_Email_01.class
+com\loginTests\Pass_Validate_01.class
+com\dashboardTests\Verify_ProfileBtn_02.class
+com\fileUploadTests\Verify_FileUploadButton.class
+Utils\DeleteUser.class
 pageObjects\LoginPage.class
 Utils\WebDriverProperties.class
-com\loginTests\Pass_Validate_01.class
 com\registerTests\Password_Rules_01.class
 Utils\ExcelUtils.class
-com\fileUploadTests\Verify_FileUploadButton.class
+com\registerTests\TC_Register_Userid_1.class
 pageObjects\DashboardPage.class
