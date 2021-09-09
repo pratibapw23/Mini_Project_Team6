@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13077" started-at="2021-09-09T15:29:18 IST" finished-at="2021-09-09T15:29:31 IST">
+  <suite name="Default suite" duration-ms="12469" started-at="2021-09-09T16:45:31 IST" finished-at="2021-09-09T16:45:43 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13077" started-at="2021-09-09T15:29:18 IST" finished-at="2021-09-09T15:29:31 IST">
-      <class name="com.registerTests.Register_Button_13">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.registerTests.Register_Button_13@4e718207]" name="beforeMethod" is-config="true" duration-ms="5395" started-at="2021-09-09T15:29:18 IST" finished-at="2021-09-09T15:29:24 IST">
+    <test name="Default test" duration-ms="12469" started-at="2021-09-09T16:45:31 IST" finished-at="2021-09-09T16:45:43 IST">
+      <class name="com.dashboardTests.Verify_ProfileBtn_02">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.dashboardTests.Verify_ProfileBtn_02@67b467e9]" name="beforeClass" is-config="true" duration-ms="5372" started-at="2021-09-09T16:45:31 IST" finished-at="2021-09-09T16:45:36 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="Vrfy_ProfilePic()[pri:0, instance:com.registerTests.Register_Button_13@4e718207]" name="Vrfy_ProfilePic" duration-ms="6626" started-at="2021-09-09T15:29:24 IST" finished-at="2021-09-09T15:29:30 IST">
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="verifyProfileButtonEnable()[pri:0, instance:com.dashboardTests.Verify_ProfileBtn_02@67b467e9]" name="verifyProfileButtonEnable" duration-ms="6068" started-at="2021-09-09T16:45:36 IST" finished-at="2021-09-09T16:45:42 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Vrfy_ProfilePic -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.registerTests.Register_Button_13@4e718207]" name="afterMethod" is-config="true" duration-ms="1018" started-at="2021-09-09T15:29:30 IST" finished-at="2021-09-09T15:29:31 IST">
+        </test-method> <!-- verifyProfileButtonEnable -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.dashboardTests.Verify_ProfileBtn_02@67b467e9]" name="afterClass" is-config="true" duration-ms="980" started-at="2021-09-09T16:45:42 IST" finished-at="2021-09-09T16:45:43 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.registerTests.Register_Button_13 -->
-=======
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
-  <reporter-output>
-  </reporter-output>
-  <suite started-at="2021-09-09T15:03:17 IST" name="Default suite" finished-at="2021-09-09T15:03:52 IST" duration-ms="35240">
-    <groups>
-    </groups>
-    <test started-at="2021-09-09T15:03:17 IST" name="Default test" finished-at="2021-09-09T15:03:52 IST" duration-ms="35240">
-      <class name="com.functionalityTests.ChangePassword">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.functionalityTests.ChangePassword@194bcebf]" started-at="2021-09-09T15:03:17 IST" name="beforeMethod" finished-at="2021-09-09T15:03:30 IST" duration-ms="12323" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyUsername()[pri:0, instance:com.functionalityTests.ChangePassword@194bcebf]" started-at="2021-09-09T15:03:30 IST" name="verifyUsername" finished-at="2021-09-09T15:03:52 IST" duration-ms="22413" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUsername -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.functionalityTests.ChangePassword@194bcebf]" started-at="2021-09-09T15:03:52 IST" name="afterMethod" finished-at="2021-09-09T15:03:52 IST" duration-ms="446" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.functionalityTests.ChangePassword -->
->>>>>>> refs/remotes/origin/master
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.dashboardTests.Verify_ProfileBtn_02 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
