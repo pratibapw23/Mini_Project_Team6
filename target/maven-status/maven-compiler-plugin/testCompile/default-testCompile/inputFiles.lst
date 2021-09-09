@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\com\loginTests\Pass_Validate_01.java
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\com\registerTests\Password_Rules_01.java
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\com\registerTests\TC_Register_Userid_1.java
@@ -11,3 +12,16 @@ C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\com\dashboardTests
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\Utils\DeleteUser.java
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\Utils\WebDriverProperties.java
 C:\Users\pratibha_wabale\git\Mini_Project_Team6\src\test\java\com\fileUploadTests\Verify_FileUploadButton.java
+=======
+E:\Persistent\Projects\Mini_Project_Team6\src\test\java\Utils\DeleteUser.java
+E:\Persistent\Projects\Mini_Project_Team6\src\test\java\com\registerTests\Verify_Email_01.java
+E:\Persistent\Projects\Mini_Project_Team6\src\test\java\Utils\ExcelUtils.java
+E:\Persistent\Projects\Mini_Project_Team6\src\test\java\com\fileUploadTests\Verify_FileUploadButton.java
+E:\Persistent\Projects\Mini_Project_Team6\src\test\java\pageObjects\DashboardPage.java
+E:\Persistent\Projects\Mini_Project_Team6\src\test\java\pageObjects\RegisterPage.java
+E:\Persistent\Projects\Mini_Project_Team6\src\test\java\com\loginTests\Pass_Validate_01.java
+E:\Persistent\Projects\Mini_Project_Team6\src\test\java\com\registerTests\TC_Register_Userid_1.java
+E:\Persistent\Projects\Mini_Project_Team6\src\test\java\pageObjects\LoginPage.java
+E:\Persistent\Projects\Mini_Project_Team6\src\test\java\com\registerTests\Password_Rules_01.java
+E:\Persistent\Projects\Mini_Project_Team6\src\test\java\Utils\WebDriverProperties.java
+>>>>>>> refs/remotes/origin/master

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
@@ -20,6 +21,29 @@
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- com.registerTests.Register_Button_13 -->
+=======
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-09-09T15:03:17 IST" name="Default suite" finished-at="2021-09-09T15:03:52 IST" duration-ms="35240">
+    <groups>
+    </groups>
+    <test started-at="2021-09-09T15:03:17 IST" name="Default test" finished-at="2021-09-09T15:03:52 IST" duration-ms="35240">
+      <class name="com.functionalityTests.ChangePassword">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.functionalityTests.ChangePassword@194bcebf]" started-at="2021-09-09T15:03:17 IST" name="beforeMethod" finished-at="2021-09-09T15:03:30 IST" duration-ms="12323" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyUsername()[pri:0, instance:com.functionalityTests.ChangePassword@194bcebf]" started-at="2021-09-09T15:03:30 IST" name="verifyUsername" finished-at="2021-09-09T15:03:52 IST" duration-ms="22413" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUsername -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.functionalityTests.ChangePassword@194bcebf]" started-at="2021-09-09T15:03:52 IST" name="afterMethod" finished-at="2021-09-09T15:03:52 IST" duration-ms="446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.functionalityTests.ChangePassword -->
+>>>>>>> refs/remotes/origin/master
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

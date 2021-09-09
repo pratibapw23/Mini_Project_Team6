@@ -1,1 +1,14 @@
 /target/
+./test-output/
+test-output/testng-results.xml
+test-output/testng-failed.xml
+test-output/old/Default suite/testng.xml.html
+test-output/old/Default suite/methods.html
+test-output/old/Default suite/methods-alphabetical.html
+test-output/old/Default suite/classes.html
+test-output/index.html
+test-output/emailable-report.html
+test-output/Default suite/testng-failed.xml
+test-output/Default suite/Default test.xml
+test-output/Default suite/Default test.html
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
