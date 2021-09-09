@@ -5,7 +5,7 @@
     <classes>
       <class name="com.loginTests.Pass_Validate_01"/>
        <class name="com.registerTests.Password_Rules_01"/>
-       <class name="com.registerTests.TC_Register_Userid_1"></class>
+       
        <class name="com.fileUploadTests.Verify_FileUploadButton">
        <methods>
        <exclude name="check_windowOpen"/>
