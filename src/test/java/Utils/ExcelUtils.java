@@ -73,6 +73,13 @@ public class ExcelUtils {
 		
 		return mobileno;
 	}
+	public static String getExpectedUrl() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");	
+		String ProfileUrl=sheet.getRow(9).getCell(0).getStringCellValue();
+		return ProfileUrl;
+	}
 	
 	
 
