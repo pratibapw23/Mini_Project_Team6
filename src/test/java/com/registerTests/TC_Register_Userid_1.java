@@ -28,8 +28,9 @@ public class TC_Register_Userid_1 {
 	WebDriver driver;
 	
 	@Test
-	public void Userid_001() throws IOException
+	public void Userid_001() throws IOException, InterruptedException
 	{
+		System.out.println("hello");
 		RegisterPage.registerButton(driver).click();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
@@ -42,7 +43,9 @@ public class TC_Register_Userid_1 {
 		RegisterPage.mobileNumber(driver).sendKeys("8787878787");
 		Select genderUi = new Select(RegisterPage.gender(driver));
 		genderUi.selectByValue("Female");
-		RegisterPage.registerSubmit(driver).submit();
+		Thread.sleep(100);
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+		RegisterPage.registerSubmit(driver).click();
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 		assertEquals(driver.getTitle(), "Login to iDrive");
 		
