@@ -2,11 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite">
   <test thread-count="5" name="Pass_Validate01_testng">
+  <packages>
+  	 <package name="com.loginTests"/>
+  	 <package name="com.dashboardTests"/>
+  	 <package name="com.functionalityTests"/>
+  </packages>
+  
     <classes>
-      <class name="com.loginTests.Pass_Validate_01"/>
        <class name="com.registerTests.Password_Rules_01"/>
-       <class name="com.dashboardTests.Verify_ProfileBtn_02"/>
-       
+       <class name="com.registerTests.Register_Button_13"/>
        <class name="com.fileUploadTests.Verify_FileUploadButton">
        <methods>
        <exclude name="check_windowOpen"/>
