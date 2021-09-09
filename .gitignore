@@ -1,4 +1,4 @@
-/target/
+target/
 ./test-output/
 test-output/testng-results.xml
 test-output/testng-failed.xml
