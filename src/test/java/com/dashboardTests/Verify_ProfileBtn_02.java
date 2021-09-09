@@ -33,15 +33,7 @@ public class Verify_ProfileBtn_02 {
              System.out.println("Button is enabled");
       else
              System.out.println("Button is disabled");
-      
-  }
-  @Test
-  public void verifyOnClickProfileButton() throws IOException
-  {
-	  LoginPage.profileLink(driver).click();
-      String ActualUrl=driver.getCurrentUrl();
-      String ExpctedUrl=ExcelUtils.getExpectedUrl();
-      assertEquals(ExpctedUrl, ActualUrl);
+     
   }
   @BeforeClass
   public void beforeClass() throws IOException {
