@@ -75,5 +75,26 @@ public class ExcelUtils {
 	}
 	
 	
-
+	public static String getUsernameChangePassword() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		String uname=sheet.getRow(10).getCell(0).getStringCellValue();
+		return uname;
+	}
+	
+	public static String getOldPasswordChangePassword() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		String uname=sheet.getRow(10).getCell(1).getStringCellValue();
+		return uname;
+	}
+	public static String getNewPasswordChangePassword() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		String uname=sheet.getRow(10).getCell(2).getStringCellValue();
+		return uname;
+	}
 }
