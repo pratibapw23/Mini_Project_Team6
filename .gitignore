@@ -1,5 +1,5 @@
 target/
-./test-output/
+test-output/
 test-output/testng-results.xml
 test-output/testng-failed.xml
 test-output/old/Default suite/testng.xml.html
