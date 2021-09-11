@@ -24,9 +24,8 @@ public class Verify_DeleteBtn_09 {
       
       WebElement e=DashboardPage.deleteButton(driver);
       boolean display=e.isDisplayed();
-      boolean enable=e.isEnabled();
-      if(display && enable)
-    	  System.out.println("Delete Button is present and enabled");
+      if(display)
+    	  System.out.println("Delete Button is visible");
       else
     	  System.out.println("Delete Button is not present");
   }
