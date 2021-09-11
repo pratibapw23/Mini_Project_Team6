@@ -1,5 +1,5 @@
 package com.registerTests;
-
+import Utils.*;
 import static org.testng.Assert.assertEquals;
 
 import java.io.FileNotFoundException;
@@ -30,24 +30,25 @@ public class TC_Register_Userid_1 {
 	@Test
 	public void Userid_001() throws IOException, InterruptedException
 	{
-		System.out.println("hello");
+		String RegistrationDetails[]=ExcelUtils.getRegistrationDetails1();
+		
 		RegisterPage.registerButton(driver).click();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
-		RegisterPage.username(driver).sendKeys("temp09");
-		RegisterPage.firstName(driver).sendKeys("temp");
-		RegisterPage.lastName(driver).sendKeys("lasttemp");
-		RegisterPage.email(driver).sendKeys("temp@gmail.com");
-		RegisterPage.passwordTextbox(driver).sendKeys("Tem@p123");
-		RegisterPage.passwordTextbox2(driver).sendKeys("Tem@p123");
+		RegisterPage.username(driver).sendKeys(RegistrationDetails[0]);
+		RegisterPage.firstName(driver).sendKeys(RegistrationDetails[1]);
+		RegisterPage.lastName(driver).sendKeys(RegistrationDetails[2]);
+		RegisterPage.email(driver).sendKeys(RegistrationDetails[3]);
+		RegisterPage.passwordTextbox(driver).sendKeys(RegistrationDetails[4]);
+		RegisterPage.passwordTextbox2(driver).sendKeys(RegistrationDetails[5]);
 		RegisterPage.mobileNumber(driver).sendKeys("8787878787");
 		Select genderUi = new Select(RegisterPage.gender(driver));
 		genderUi.selectByValue("Female");
 		Thread.sleep(100);
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
-		RegisterPage.registerSubmit(driver).click();
+		RegisterPage.registerSubmit(driver).submit();
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
-		assertEquals(driver.getTitle(), "Login to iDrive");
+		assertEquals(driver.getTitle(), ExcelUtils.getLoginPageExpectedTitle());
 		
 		String email="temp@gmail.com";
 		DeleteUser.deleteUser(email, driver);
