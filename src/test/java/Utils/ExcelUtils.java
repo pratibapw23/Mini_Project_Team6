@@ -104,4 +104,33 @@ public class ExcelUtils {
 		String uname=sheet.getRow(10).getCell(2).getStringCellValue();
 		return uname;
 	}
+	public static String getRegisterPageExpectedTitle() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Properties");
+		String RegisterPageExpectedTitle=sheet.getRow(1).getCell(1).getStringCellValue();
+		return RegisterPageExpectedTitle;
+	}
+	public static String getLoginPageExpectedTitle() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Properties");
+		String LoginPageExpectedTitle=sheet.getRow(1).getCell(2).getStringCellValue();
+		return LoginPageExpectedTitle;
+	}
+	public static String[] getRegistrationDetails1() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Registration_Details");
+		String RegistrationDetails[]=new String[6];
+		RegistrationDetails[0]=sheet.getRow(1).getCell(0).getStringCellValue();
+		RegistrationDetails[1]=sheet.getRow(1).getCell(1).getStringCellValue();
+		RegistrationDetails[2]=sheet.getRow(1).getCell(2).getStringCellValue();
+		RegistrationDetails[3]=sheet.getRow(1).getCell(3).getStringCellValue();
+		RegistrationDetails[4]=sheet.getRow(1).getCell(4).getStringCellValue();
+		RegistrationDetails[5]=sheet.getRow(1).getCell(5).getStringCellValue();
+
+		return RegistrationDetails;
+		
+	}
 }
