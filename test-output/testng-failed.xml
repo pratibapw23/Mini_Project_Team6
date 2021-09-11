@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dashboardTests.Verify_ProfileBtn_02">
+      <class name="com.registerTests.Verify_Email_01">
         <methods>
-          <include name="afterClass"/>
-          <include name="verifyProfileButtonEnable"/>
-          <include name="beforeClass"/>
+          <include name="verifyEmail"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.dashboardTests.Verify_ProfileBtn_02 -->
+      </class> <!-- com.registerTests.Verify_Email_01 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

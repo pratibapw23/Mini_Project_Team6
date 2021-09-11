@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="12469" started-at="2021-09-09T16:45:31 IST" finished-at="2021-09-09T16:45:43 IST">
+  <suite name="Default suite" duration-ms="20164" started-at="2021-09-11T11:58:08 IST" finished-at="2021-09-11T11:58:28 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="12469" started-at="2021-09-09T16:45:31 IST" finished-at="2021-09-09T16:45:43 IST">
-      <class name="com.dashboardTests.Verify_ProfileBtn_02">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.dashboardTests.Verify_ProfileBtn_02@67b467e9]" name="beforeClass" is-config="true" duration-ms="5372" started-at="2021-09-09T16:45:31 IST" finished-at="2021-09-09T16:45:36 IST">
+    <test name="Default test" duration-ms="20164" started-at="2021-09-11T11:58:08 IST" finished-at="2021-09-11T11:58:28 IST">
+      <class name="com.profileDataTests.FirstNameLastNameCheck">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.profileDataTests.FirstNameLastNameCheck@4e718207]" name="beforeMethod" is-config="true" duration-ms="7250" started-at="2021-09-11T11:58:08 IST" finished-at="2021-09-11T11:58:15 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="verifyProfileButtonEnable()[pri:0, instance:com.dashboardTests.Verify_ProfileBtn_02@67b467e9]" name="verifyProfileButtonEnable" duration-ms="6068" started-at="2021-09-09T16:45:36 IST" finished-at="2021-09-09T16:45:42 IST">
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="verifyUsername()[pri:0, instance:com.profileDataTests.FirstNameLastNameCheck@4e718207]" name="verifyUsername" duration-ms="11690" started-at="2021-09-11T11:58:15 IST" finished-at="2021-09-11T11:58:27 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyProfileButtonEnable -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.dashboardTests.Verify_ProfileBtn_02@67b467e9]" name="afterClass" is-config="true" duration-ms="980" started-at="2021-09-09T16:45:42 IST" finished-at="2021-09-09T16:45:43 IST">
+        </test-method> <!-- verifyUsername -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.profileDataTests.FirstNameLastNameCheck@4e718207]" name="afterMethod" is-config="true" duration-ms="1189" started-at="2021-09-11T11:58:27 IST" finished-at="2021-09-11T11:58:28 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.dashboardTests.Verify_ProfileBtn_02 -->
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.profileDataTests.FirstNameLastNameCheck -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
