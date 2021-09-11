@@ -1,4 +1,5 @@
 package com.registerTests;
+import pageObjects.*;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -20,19 +21,11 @@ public class Register_Button_13 {
   
   @Test//(groups= {"Login"})
   public void Vrfy_ProfilePic() throws IOException, InterruptedException {
-	  
-	  driver.findElement(By.xpath("(//A[@href='register'][text()='Register'])[1]")).click();
-	  
-	  
+	  RegisterPage.registerButton(driver).click();
+	  System.out.println("Register Button is clickable");
 	  String ActualTitle = driver.getTitle();
-	  String ExpectedTitle = "Register Yourself!";
+	  String ExpectedTitle =ExcelUtils.getRegisterPageExpectedTitle();
 	  Assert.assertEquals(ActualTitle, ExpectedTitle);
-  
-      System.out.println("Test Case Passed : Register Button is clickable");
-      
-	  
-	  Thread.sleep(5000);
-	  
 	  
   }
   @BeforeMethod
