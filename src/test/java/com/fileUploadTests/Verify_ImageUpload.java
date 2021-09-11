@@ -71,13 +71,13 @@ public class Verify_ImageUpload {
  
   @BeforeClass
   public void beforeClass() throws IOException {
-		driver=WebDriverProperties.setFirefoxDriverProperties();
+		driver=WebDriverProperties.setChromeDriverProperties();
 
   }
 
   @AfterClass
   public void afterClass() {
-	 // driver.quit();
+	driver.quit();
   }
 
 }
