@@ -43,5 +43,9 @@ public class ProfilePage {
 		element=driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[2]/span[1]/i"));
 		return element;
 	}
+	public static WebElement getActualMobileNumber(WebDriver driver) {
+		element=driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div[1]/div/div[5]/div[2]"));
+		return element;
+	}
 
 }
