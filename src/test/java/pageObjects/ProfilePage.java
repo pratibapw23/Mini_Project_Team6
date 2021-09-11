@@ -37,5 +37,11 @@ public class ProfilePage {
 		element=driver.findElement(By.xpath("//*[@id=\"nav-menu\"]/ul/li[3]/a"));
 		return element;
 	}
+	
+	public static WebElement eyeButton(WebDriver driver) throws IOException
+	{
+		element=driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[2]/span[1]/i"));
+		return element;
+	}
 
 }
