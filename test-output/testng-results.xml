@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="12157" started-at="2021-09-12T12:22:54 IST" finished-at="2021-09-12T12:23:06 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="12157" started-at="2021-09-12T12:22:54 IST" finished-at="2021-09-12T12:23:06 IST">
+      <class name="com.profileDataTests.MobileNumberCheck">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.profileDataTests.MobileNumberCheck@67b467e9]" name="beforeClass" is-config="true" duration-ms="4656" started-at="2021-09-12T12:22:54 IST" finished-at="2021-09-12T12:22:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="verifyMobileNumber()[pri:0, instance:com.profileDataTests.MobileNumberCheck@67b467e9]" name="verifyMobileNumber" duration-ms="6411" started-at="2021-09-12T12:22:58 IST" finished-at="2021-09-12T12:23:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMobileNumber -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.profileDataTests.MobileNumberCheck@67b467e9]" name="afterClass" is-config="true" duration-ms="1036" started-at="2021-09-12T12:23:05 IST" finished-at="2021-09-12T12:23:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.profileDataTests.MobileNumberCheck -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
