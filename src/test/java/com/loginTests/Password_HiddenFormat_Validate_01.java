@@ -1,7 +1,7 @@
 package com.loginTests;
-
+import Utils.*;
 import org.testng.annotations.Test;
-
+import pageObjects.*;
 import Utils.ExcelUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -26,9 +26,10 @@ public class Password_HiddenFormat_Validate_01 {
   public void Password_Hidden_Format() throws InterruptedException, IOException {
 	
 		WebElement e;
-		driver.findElement(By.linkText("Login")).click();
+		LoginPage.loginButton(driver).click();
+		//driver.findElement(By.linkText("Login")).click();
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		e=driver.findElement(By.name("password"));
+		e=LoginPage.passwordTextBox(driver);
 		e.sendKeys(ExcelUtils.getPassword());
 	    String s = e.getAttribute("type"); 
 		Assert.assertEquals("password",s);
@@ -38,13 +39,7 @@ public class Password_HiddenFormat_Validate_01 {
   
   @BeforeMethod
   public void beforeMethod() throws IOException {
-	  WebDriverManager.chromedriver().setup();
-	  driver=new ChromeDriver();
-	 FileReader reader=new FileReader("Info.properties");
-	 Properties prop=new Properties();
-	 prop.load(reader); 
-	 String url=prop.getProperty("url");
-	 driver.get(url);
+	  driver=WebDriverProperties.setChromeDriverProperties();
   }
 
   @AfterMethod
