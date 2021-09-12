@@ -6,9 +6,12 @@
   	 <package name="com.loginTests"/>
   	 <package name="com.dashboardTests"/>
   	 <package name="com.functionalityTests"/>
+  	 <package name="com.profileDataTests"/>
+  	 
   </packages>
   
     <classes>
+       <class name="com.compatibilityTests.Verify_Image_Size"/>
        <class name="com.registerTests.Password_Rules_01"/>
        <class name="com.registerTests.Register_Button_13"/>
        <class name="com.fileUploadTests.Verify_FileUploadButton">

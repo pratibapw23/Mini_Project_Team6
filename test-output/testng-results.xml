@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20164" started-at="2021-09-11T11:58:08 IST" finished-at="2021-09-11T11:58:28 IST">
+  <suite name="Default suite" duration-ms="12157" started-at="2021-09-12T12:22:54 IST" finished-at="2021-09-12T12:23:06 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20164" started-at="2021-09-11T11:58:08 IST" finished-at="2021-09-11T11:58:28 IST">
-      <class name="com.profileDataTests.FirstNameLastNameCheck">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.profileDataTests.FirstNameLastNameCheck@4e718207]" name="beforeMethod" is-config="true" duration-ms="7250" started-at="2021-09-11T11:58:08 IST" finished-at="2021-09-11T11:58:15 IST">
+    <test name="Default test" duration-ms="12157" started-at="2021-09-12T12:22:54 IST" finished-at="2021-09-12T12:23:06 IST">
+      <class name="com.profileDataTests.MobileNumberCheck">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.profileDataTests.MobileNumberCheck@67b467e9]" name="beforeClass" is-config="true" duration-ms="4656" started-at="2021-09-12T12:22:54 IST" finished-at="2021-09-12T12:22:58 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifyUsername()[pri:0, instance:com.profileDataTests.FirstNameLastNameCheck@4e718207]" name="verifyUsername" duration-ms="11690" started-at="2021-09-11T11:58:15 IST" finished-at="2021-09-11T11:58:27 IST">
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="verifyMobileNumber()[pri:0, instance:com.profileDataTests.MobileNumberCheck@67b467e9]" name="verifyMobileNumber" duration-ms="6411" started-at="2021-09-12T12:22:58 IST" finished-at="2021-09-12T12:23:05 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUsername -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.profileDataTests.FirstNameLastNameCheck@4e718207]" name="afterMethod" is-config="true" duration-ms="1189" started-at="2021-09-11T11:58:27 IST" finished-at="2021-09-11T11:58:28 IST">
+        </test-method> <!-- verifyMobileNumber -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.profileDataTests.MobileNumberCheck@67b467e9]" name="afterClass" is-config="true" duration-ms="1036" started-at="2021-09-12T12:23:05 IST" finished-at="2021-09-12T12:23:06 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.profileDataTests.FirstNameLastNameCheck -->
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.profileDataTests.MobileNumberCheck -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

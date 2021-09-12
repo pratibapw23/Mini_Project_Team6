@@ -45,7 +45,7 @@ public class TC_Register_Userid_1 {
 		Select genderUi = new Select(RegisterPage.gender(driver));
 		genderUi.selectByValue("Female");
 		Thread.sleep(1000);
-		driver.manage().timeouts().implicitlyWait(25,TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(25,TimeUnit.SECONDS);
 		RegisterPage.registerSubmit(driver).click();
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 		assertEquals(driver.getTitle(), ExcelUtils.getLoginPageExpectedTitle());

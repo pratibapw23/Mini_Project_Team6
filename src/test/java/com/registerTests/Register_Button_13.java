@@ -19,8 +19,8 @@ public class Register_Button_13 {
 	WebDriver driver;
 
   
-  @Test//(groups= {"Login"})
-  public void Vrfy_ProfilePic() throws IOException, InterruptedException {
+  @Test
+  public void Vrfy_registerButton() throws IOException, InterruptedException {
 	  RegisterPage.registerButton(driver).click();
 	  System.out.println("Register Button is clickable");
 	  String ActualTitle = driver.getTitle();
