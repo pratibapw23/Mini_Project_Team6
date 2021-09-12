@@ -35,12 +35,12 @@ public class TC_Register_Userid_1 {
 		RegisterPage.registerButton(driver).click();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
-		RegisterPage.username(driver).sendKeys(RegistrationDetails[0]);
-		RegisterPage.firstName(driver).sendKeys(RegistrationDetails[1]);
-		RegisterPage.lastName(driver).sendKeys(RegistrationDetails[2]);
-		RegisterPage.email(driver).sendKeys(RegistrationDetails[3]);
-		RegisterPage.passwordTextbox(driver).sendKeys(RegistrationDetails[4]);
-		RegisterPage.passwordTextbox2(driver).sendKeys(RegistrationDetails[5]);
+		RegisterPage.username(driver).sendKeys("temp");
+		RegisterPage.firstName(driver).sendKeys("ftemp");
+		RegisterPage.lastName(driver).sendKeys("ltemp");
+		RegisterPage.email(driver).sendKeys("temp@gmail.com");
+		RegisterPage.passwordTextbox(driver).sendKeys("Temp@12345");
+		RegisterPage.passwordTextbox2(driver).sendKeys("Temp@12345");
 		RegisterPage.mobileNumber(driver).sendKeys("8787878787");
 		Select genderUi = new Select(RegisterPage.gender(driver));
 		genderUi.selectByValue("Female");
