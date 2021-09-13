@@ -88,6 +88,20 @@ public class ExcelUtils {
 		String LastName_UpdateProfile=sheet.getRow(7).getCell(0).getStringCellValue();
 		return LastName_UpdateProfile;
 	}
+	public static String getOldFirstName_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		String OldFirstName_UpdateProfile=sheet.getRow(6).getCell(1).getStringCellValue();
+		return OldFirstName_UpdateProfile;
+	}
+	public static String getOldLastName_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Credentials");
+		String OldLastName_UpdateProfile=sheet.getRow(7).getCell(1).getStringCellValue();
+		return OldLastName_UpdateProfile;
+	}
 
 
 }
