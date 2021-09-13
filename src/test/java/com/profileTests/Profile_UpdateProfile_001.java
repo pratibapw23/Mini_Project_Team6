@@ -33,6 +33,7 @@ public class Profile_UpdateProfile_001 {
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div[2]/ul/li[1]/button")).click();
 	  Thread.sleep(1000);
+	  
 	  driver.findElement(By.name("first_name")).clear();
 	  driver.findElement(By.name("first_name")).sendKeys(ExcelUtils.getFirstName_UpdateProfile());
 	  driver.findElement(By.name("last_name")).clear();
@@ -45,6 +46,18 @@ public class Profile_UpdateProfile_001 {
 	  String ActualLastName=ActualFullName[1];
 	  assertEquals(ExcelUtils.getFirstName_UpdateProfile(),ActualFirstName);
 	  assertEquals(ExcelUtils.getLastName_UpdateProfile(),ActualLastName);
+	  
+	  //set to original again
+	  driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div[2]/ul/li[1]/button")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.name("first_name")).clear();
+	  driver.findElement(By.name("first_name")).sendKeys(ExcelUtils.getOldFirstName_UpdateProfile());
+	  driver.findElement(By.name("last_name")).clear();
+	  driver.findElement(By.name("last_name")).sendKeys(ExcelUtils.getOldLastName_UpdateProfile());
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//*[@id=\"form1\"]/div/input[2]")).submit();
+	  Thread.sleep(1000);
+	  
 
   }
   
