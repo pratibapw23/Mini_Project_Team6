@@ -133,4 +133,48 @@ public class ExcelUtils {
 		return RegistrationDetails;
 		
 	}
+	
+	public static String getUserName_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Rutuja");
+		String UserName_UpdateProfile=sheet.getRow(5).getCell(0).getStringCellValue();
+		return UserName_UpdateProfile;
+	}
+	public static String getPassword_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Rutuja");
+		String Password_UpdateProfile=sheet.getRow(5).getCell(1).getStringCellValue();
+		return Password_UpdateProfile;
+	}
+	public static String getFirstName_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Rutuja");
+		String FirstName_UpdateProfile=sheet.getRow(6).getCell(0).getStringCellValue();
+		return FirstName_UpdateProfile;
+	}
+	public static String getLastName_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Rutuja");
+		String LastName_UpdateProfile=sheet.getRow(7).getCell(0).getStringCellValue();
+		return LastName_UpdateProfile;
+	}
+	public static String getOldFirstName_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Rutuja");
+		String OldFirstName_UpdateProfile=sheet.getRow(6).getCell(1).getStringCellValue();
+		return OldFirstName_UpdateProfile;
+	}
+	public static String getOldLastName_UpdateProfile() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Rutuja");
+		String OldLastName_UpdateProfile=sheet.getRow(7).getCell(1).getStringCellValue();
+		return OldLastName_UpdateProfile;
+	}
+
 }
