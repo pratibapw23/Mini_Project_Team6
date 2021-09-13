@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import Utils.ExcelUtils;
 import Utils.WebDriverProperties;
-import pageObjects.LoginPage;
+import pageObjects.*;
 import pageObjects.ProfilePage;
 
 public class FirstNameLastNameCheck {
