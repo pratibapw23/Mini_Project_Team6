@@ -21,6 +21,7 @@ public class WebDriverProperties {
 		 prop.load(reader); 
 		 String url=prop.getProperty("url");
 		 driver.get(url);
+		
 		 driver.manage().window().maximize();
 		return driver;
 	}

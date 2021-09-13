@@ -1,1 +1,25 @@
 /target/
+test-output/junitreports/TEST-com.fileUploadTests.Validate_ProfileEmail_display_56.xml
+        test-output/junitreports/TEST-com.loginTests.Alert_Check_28.xml
+        test-output/junitreports/TEST-com.registerTests.Alert_Check_28.xml
+        test-output/junitreports/TEST-com.registerTests.Register_18.xml
+        test-output/junitreports/TEST-com.registerTests.Register_Button_13.xml
+
+test-output/Default suite/Default test.html
+           test-output/Default suite/Default test.xml
+          test-output/Default suite/testng-failed.xml
+           test-output/emailable-report.html
+           test-output/index.html
+           test-output/junitreports/TEST-com.fileUploadTests.Update_ProfilePic_63.xml
+          test-output/junitreports/TEST-com.loginTests.Alert_Check_28.xml
+           test-output/junitreports/TEST-com.registerTests.Alert_Check_28.xml
+           test-output/junitreports/TEST-com.registerTests.Register_18.xml
+           test-output/junitreports/TEST-com.registerTests.Register_Button_13.xml
+           test-output/old/Default suite/classes.html
+          test-output/old/Default suite/methods-alphabetical.html
+           test-output/old/Default suite/methods.html
+           test-output/old/Default suite/testng.xml.html
+           test-output/old/Default suite/toc.html
+           test-output/old/index.html
+           test-output/testng-failed.xml
+           test-output/testng-results.xml

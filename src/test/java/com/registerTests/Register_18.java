@@ -16,12 +16,16 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+@SuppressWarnings("unused")
 public class Register_18 {
 	WebDriver driver;
 
   
   @Test//(groups= {"Login"})
   public void Vrfy_Regdata() throws IOException, InterruptedException {
+	  
+	  driver.findElement(By.xpath("(//A[@href='register'][text()='Register'])[2]")).click();
+
 	  driver.findElement(By.xpath("(//input[@type='text'])[1]")).sendKeys("utkarshb");
 	  driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys("Utkarsh");
 	  driver.findElement(By.xpath("(//input[@type='text'])[3]")).sendKeys("Borawake");

@@ -1,17 +1,21 @@
 package com.registerTests;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
-import Utils.*;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import Utils.WebDriverProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Register_Button_13 {
@@ -21,8 +25,7 @@ public class Register_Button_13 {
   @Test//(groups= {"Login"})
   public void Vrfy_ProfilePic() throws IOException, InterruptedException {
 	  
-	  driver.findElement(By.xpath("(//A[@href='register'][text()='Register'])[1]")).click();
-	  
+	  driver.findElement(By.xpath("(//A[@href='register'][text()='Register'])[2]")).click();
 	  
 	  String ActualTitle = driver.getTitle();
 	  String ExpectedTitle = "Register Yourself!";
@@ -37,7 +40,8 @@ public class Register_Button_13 {
   }
   @BeforeMethod
   public void beforeMethod() throws IOException {
-	  	  driver=WebDriverProperties.setChromeDriverProperties();
+	  driver=WebDriverProperties.setChromeDriverProperties();
+
 
   }
 
