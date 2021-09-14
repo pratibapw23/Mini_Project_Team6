@@ -1,7 +1,7 @@
 package com.fileUploadTests;
 
 import org.testng.annotations.Test;
-
+import static org.testng.Assert.assertFalse;
 import Utils.DeleteUser;
 import Utils.ExcelUtils;
 import Utils.WebDriverProperties;
@@ -29,9 +29,11 @@ public class Verify_ImageUpload {
 	WebDriver driver;
 	String Path;
 	File file;
+	String email;
 
 	@Test
 	public void verifyImageUpload() throws InterruptedException, IOException {
+		
 		String RegistrationDetails[] = ExcelUtils.getRegistrationDetails1();
 		RegisterPage.registerButton(driver).click();
 		RegisterPage.username(driver).sendKeys(RegistrationDetails[0]);
@@ -46,10 +48,16 @@ public class Verify_ImageUpload {
 		WebElement element = driver.findElement(By.name("image"));
 		
 		element.sendKeys(file.getAbsolutePath());
-		
-		RegisterPage.registerSubmit(driver).submit();
-		System.out.println(driver.getTitle());
+		String actualTitlebefore_register=driver.getCurrentUrl();
+		RegisterPage.registerSubmit(driver).click();
+		String actualTitleafter_register=driver.getCurrentUrl();
+		boolean urlChanges=actualTitlebefore_register.equalsIgnoreCase(actualTitleafter_register);
+		assertFalse(urlChanges);
 
+		email=RegistrationDetails[3];
+		DeleteUser.deleteUser(email, driver);
+
+		
 	}
 
 	@BeforeClass
