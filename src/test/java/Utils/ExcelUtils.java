@@ -134,6 +134,25 @@ public class ExcelUtils {
 		
 	}
 	
+	public static String[] getRegistrationDetailsUtkarsh() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Registration_Details");
+		String RegistrationDetailsU[]=new String[6];
+		RegistrationDetailsU[0]=sheet.getRow(2).getCell(0).getStringCellValue();
+		RegistrationDetailsU[1]=sheet.getRow(2).getCell(1).getStringCellValue();
+		RegistrationDetailsU[2]=sheet.getRow(2).getCell(2).getStringCellValue();
+		RegistrationDetailsU[3]=sheet.getRow(2).getCell(3).getStringCellValue();
+		RegistrationDetailsU[4]=sheet.getRow(2).getCell(4).getStringCellValue();
+		RegistrationDetailsU[5]=sheet.getRow(2).getCell(5).getStringCellValue();
+		
+		return RegistrationDetailsU;
+		
+	}
+	
+	
+	
+	
 	public static String getUserName_UpdateProfile() throws IOException
 	{
 		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
