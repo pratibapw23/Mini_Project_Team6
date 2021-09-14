@@ -37,13 +37,13 @@ public class Verify_ImageUpload {
 		RegisterPage.lastName(driver).sendKeys(RegistrationDetails[2]);
 
 		RegisterPage.email(driver).sendKeys(RegistrationDetails[3]);
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		RegisterPage.passwordTextbox(driver).sendKeys(RegistrationDetails[4]);
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		RegisterPage.passwordTextbox2(driver).sendKeys(RegistrationDetails[5]);
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		RegisterPage.mobileNumber(driver).sendKeys("8787878787");
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		Select genderUi = new Select(RegisterPage.gender(driver));
 		genderUi.selectByValue("Female");
 		//Upload image
