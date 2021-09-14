@@ -5,6 +5,7 @@ import static org.testng.Assert.assertFalse;
 import Utils.DeleteUser;
 import Utils.ExcelUtils;
 import Utils.WebDriverProperties;
+import Utils.WindowScroll;
 import pageObjects.RegisterPage;
 
 import org.testng.annotations.BeforeClass;
@@ -43,6 +44,8 @@ public class Verify_ImageUpload {
 		RegisterPage.passwordTextbox(driver).sendKeys(RegistrationDetails[4]);
 		RegisterPage.passwordTextbox2(driver).sendKeys(RegistrationDetails[5]);
 		RegisterPage.mobileNumber(driver).sendKeys("8787878787");
+		
+		WindowScroll.scrollWindow(driver);
 		Select genderUi = new Select(RegisterPage.gender(driver));
 		genderUi.selectByValue("Female");
 		WebElement element = driver.findElement(By.name("image"));
