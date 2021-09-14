@@ -110,6 +110,11 @@ public class RegisterPage {
 		element=driver.findElement(By.xpath("/html/body/form/div/div[11]/input"));
 		return element;
 	}
+	public static WebElement gender_female(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("/html/body/form/div/div[9]/div[2]/select/option[2]"));
+		return element;
+	}
 	
 
 }
