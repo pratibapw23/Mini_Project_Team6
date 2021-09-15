@@ -39,5 +39,21 @@ WebDriver driver;
 		element=driver.findElement(By.linkText("Delete"));
 		return element;
 	}
+	
+	public static WebElement downloadButton(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[1]/div/a[1]"));
+		return element;
+	}
+	public static WebElement backButton(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("/html/body/button"));
+		return element;
+	}
+	public static WebElement profileLink(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("//*[@id=\"nav-menu\"]/ul/li[2]/a"));
+		return element;
+	}
 
 }
