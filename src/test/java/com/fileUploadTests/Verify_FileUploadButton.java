@@ -9,6 +9,8 @@ import pageObjects.LoginPage;
 
 import org.testng.annotations.BeforeMethod;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -18,6 +20,7 @@ import org.testng.annotations.AfterMethod;
 
 public class Verify_FileUploadButton {
 	WebDriver driver;
+	FileReader reader;
   @Test
   public void check_windowOpen() throws IOException, InterruptedException {
 	  LoginPage.loginButton(driver).click();
@@ -28,20 +31,9 @@ public class Verify_FileUploadButton {
 	  DashboardPage.uploadFileLink(driver).click();
 	  DashboardPage.fileName(driver).sendKeys("abc");
 	  DashboardPage.fileDescription(driver).sendKeys("pqr");
-	  DashboardPage.chooseFile(driver).submit();
+	  boolean checkClickable=DashboardPage.chooseFile(driver).isEnabled();
 	  
-	  FileReader reader=new FileReader("Info.properties");
-	  Properties prop=new Properties();
-	  prop.load(reader); 
-	  String path=prop.getProperty("scriptPath");
-	  Process p=Runtime.getRuntime().exec(path);
-	  p.waitFor();
-
-	  if(p.exitValue()==0)
-		  System.out.println("Window is opened to upload file (Process completed correctly)");
-	  else {
-	        System.out.println("Failed to open window");
-	    }
+	  assertTrue(checkClickable);
 	    
   }
   @BeforeMethod
