@@ -45,6 +45,11 @@ public class LoginPage {
 		element=driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div[1]/div/div[1]/div[2]"));
 		return element;
 	}
+	public static WebElement signUP(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[4]/a"));
+		return element;
+	}
 	
 
 }
