@@ -87,6 +87,7 @@ import org.testng.annotations.Test;
 
 import Utils.DeleteUser;
 import Utils.ExcelUtils;
+import Utils.ExcelUtils_Registration;
 import Utils.WebDriverProperties;
 import Utils.WindowScroll;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -115,7 +116,7 @@ public class Register_18 {
 	  RegisterPage.emailTextbox(driver).sendKeys(registrationDetails[3]);
 	  RegisterPage.passwordTextbox1(driver).sendKeys(registrationDetails[4]);
 	  RegisterPage.confirmPassTextbox(driver).sendKeys(registrationDetails[5]);
-	  RegisterPage.mobileNoTextbox(driver).sendKeys("6789065786");
+	  RegisterPage.mobileNoTextbox(driver).sendKeys(ExcelUtils_Registration.getMobileNo());
 	  
 	 WindowScroll.scrollWindow(driver);
 	    

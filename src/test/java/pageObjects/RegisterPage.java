@@ -115,6 +115,11 @@ public class RegisterPage {
 		element=driver.findElement(By.xpath("/html/body/form/div/div[9]/div[2]/select/option[2]"));
 		return element;
 	}
+	public static WebElement profileImage(WebDriver driver)
+	{
+		element=driver.findElement(By.name("image"));
+		return element;
+	}
 	
 
 }

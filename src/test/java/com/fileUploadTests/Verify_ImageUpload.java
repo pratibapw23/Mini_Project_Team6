@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertFalse;
 import Utils.DeleteUser;
 import Utils.ExcelUtils;
+import Utils.ExcelUtils_Registration;
 import Utils.WebDriverProperties;
 import Utils.WindowScroll;
 import pageObjects.RegisterPage;
@@ -43,12 +44,12 @@ public class Verify_ImageUpload {
 		RegisterPage.email(driver).sendKeys(RegistrationDetails[3]);
 		RegisterPage.passwordTextbox(driver).sendKeys(RegistrationDetails[4]);
 		RegisterPage.passwordTextbox2(driver).sendKeys(RegistrationDetails[5]);
-		RegisterPage.mobileNumber(driver).sendKeys("8787878787");
+		RegisterPage.mobileNumber(driver).sendKeys(ExcelUtils_Registration.getMobileNo());
 		
 		WindowScroll.scrollWindow(driver);
 		Select genderUi = new Select(RegisterPage.gender(driver));
 		genderUi.selectByValue("Female");
-		WebElement element = driver.findElement(By.name("image"));
+		WebElement element = RegisterPage.profileImage(driver);
 		
 		element.sendKeys(file.getAbsolutePath());
 		String actualTitlebefore_register=driver.getCurrentUrl();
@@ -59,6 +60,7 @@ public class Verify_ImageUpload {
 
 		email=RegistrationDetails[3];
 		DeleteUser.deleteUser(email, driver);
+		System.out.println("Verified registration successfult by uploading profile image");
 
 		
 	}
