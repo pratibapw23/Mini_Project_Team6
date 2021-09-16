@@ -19,7 +19,7 @@ public class DeleteUser {
 		driver.findElement(By.name("password")).sendKeys("tushar");
 		driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[3]/input")).click();
 		
-		driver.findElement(By.xpath("//*[@id=\"content-main\"]/div[1]/table/tbody/tr[2]/th/a")).click();
+		driver.findElement(By.xpath("//*[@id=\"content-main\"]/div[2]/table/tbody/tr[2]/th/a")).click();
 		driver.findElement(By.name("q")).sendKeys(email);
 		driver.findElement(By.xpath("//*[@id=\"changelist-search\"]/div/input[2]")).click();
 		
