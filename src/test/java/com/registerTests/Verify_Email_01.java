@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import Utils.ExcelUtils;
+import Utils.ExcelUtils_Registration;
 import Utils.WebDriverProperties;
 import pageObjects.RegisterPage;
 
@@ -32,7 +33,7 @@ public class Verify_Email_01 {
 	  Thread.sleep(2000);
 	  RegisterPage.confirmPassTextbox(driver).sendKeys(registrationDetails[5]);
 	  Thread.sleep(2000);
-	  RegisterPage.mobileNoTextbox(driver).sendKeys("6789065786");
+	  RegisterPage.mobileNoTextbox(driver).sendKeys(ExcelUtils_Registration.getMobileNo());
 	  RegisterPage.emailTextbox(driver).sendKeys(registrationDetails[3]);
 	  
   	  RegisterPage.registerButton2(driver).submit();
