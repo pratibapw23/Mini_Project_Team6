@@ -38,7 +38,17 @@ WebDriver driver;
 	
 	public static WebElement loginOnRegisterPage(WebDriver driver)
 	{
-		element=driver.findElement(By.xpath("//*[@id=\"nav-menu\"]/ul/li[2]/a"));
+		element=driver.findElement(By.xpath("//*[@id=\"nav-menu\"]/ul/li[2]/a" ));
+		return element;
+	}
+	public static WebElement home_title(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("//*[@id=\"home\"]/div/div[2]/h1" ));
+		return element;
+	}
+	public static WebElement home_text(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("//*[@id=\"home\"]/div/div[2]/p" ));
 		return element;
 	}
 }

@@ -34,12 +34,7 @@ public class Home_03 {
 	  System.out.println("URL verified on Edge browser");
 	  driver.close();
 	 
-	 //FireFox
-	  /*driver = WebDriverProperties.setFirefoxDriverProperties();
-	  String URL_Firefox= driver.getCurrentUrl();
-	  assertEquals(ExceptedURL[0],URL_Firefox);
-	  System.out.println("URL verified on FireFox browser");
-	  driver.close();*/
+
 	  
   }
 
