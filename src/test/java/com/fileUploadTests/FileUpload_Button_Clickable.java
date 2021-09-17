@@ -32,7 +32,7 @@ public class FileUpload_Button_Clickable {
 		 LoginPage.SignInButton(driver).submit();
 		 Thread.sleep(2000);
 		 DashboardPage.uploadFileLink(driver).click();
-		 // driver.findElement(By.xpath("/html/body/header/nav/div[1]/ul/li[1]/a")).click();
+		 
 		 
 		  String actualTitle = driver.getTitle();
 		  String expectedTitle = "Upload File";
