@@ -1,4 +1,4 @@
-package com.dashboardTests;
+package dashboardTests;
 
 import Utils.WebDriverProperties;
 import Utils.ExcelUtils;
