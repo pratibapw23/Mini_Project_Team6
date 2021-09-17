@@ -75,6 +75,11 @@ public class ProfilePage {
 		element=driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div[2]/ul/li[3]/button"));
 		return element;
 	}
+	
+	public static WebElement getActualGender(WebDriver driver) {
+		element=driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div[1]/div/div[4]/div[2]"));
+		return element;
+	}
 
 
 }
