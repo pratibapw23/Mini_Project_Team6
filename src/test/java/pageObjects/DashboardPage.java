@@ -55,5 +55,15 @@ WebDriver driver;
 		element=driver.findElement(By.xpath("//*[@id=\"nav-menu\"]/ul/li[2]/a"));
 		return element;
 	}
+	
+	public static WebElement Searchbar(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("//INPUT[@type='text']"));
+		return element;
+	}
+	public static WebElement getActualFilename(WebDriver driver) {
+		element=driver.findElement(By.xpath("//DIV[@class='cards_wrap']"));
+		return element;
+	}
 
 }

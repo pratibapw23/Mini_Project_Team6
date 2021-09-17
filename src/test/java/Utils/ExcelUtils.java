@@ -226,6 +226,28 @@ public class ExcelUtils {
 		return LastName_UpdateProfile;
 	}
 	
+	
+	
+	public static String getUsernameU() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData_Utkarsh");
+		String username=sheet.getRow(3).getCell(0).getStringCellValue();
+		return username;
+		
+	}
+	public static String getPasswordU() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData_Utkarsh");
+		String password=sheet.getRow(3).getCell(4).getStringCellValue();
+		return password;
+
+	}
+	
+	
+	
+	
 	public static String[] getRegistrationDetailsDhanu() throws IOException {
 		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
 		sheet=workbook.getSheet("TestData_Dhanashree");
