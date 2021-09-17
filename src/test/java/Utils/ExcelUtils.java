@@ -239,4 +239,21 @@ public class ExcelUtils {
 		
 		return RegistrationDetailsU;
 	}
+	
+	public static String getInvalidUserName() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Ankita");
+		String username=sheet.getRow(1).getCell(2).getStringCellValue();
+		return username;
+		
+	}
+	public static String getInvalidPassword() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Ankita");
+		String password=sheet.getRow(1).getCell(3).getStringCellValue();
+		return password;
+
+	}
 }
