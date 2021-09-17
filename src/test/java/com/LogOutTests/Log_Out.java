@@ -6,6 +6,9 @@ import org.testng.annotations.Test;
 import Utils.ExcelUtils;
 import Utils.WebDriverProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pageObjects.LoginPage;
+import pageObjects.ProfilePage;
+
 import org.testng.annotations.BeforeMethod;
 
 import static org.testng.Assert.assertEquals;
@@ -22,14 +25,14 @@ public class Log_Out {
 	WebDriver driver;
   @Test
   public void Log_Out_Successfully() throws IOException, InterruptedException {
-	  driver.findElement(By.xpath("//*[@id=\"nav-menu\"]/ul/li[2]/a")).click();
-	  
-	  driver.manage().window().maximize();
-	  
-	  driver.findElement(By.name("username")).sendKeys(ExcelUtils.getUsername());
-	  driver.findElement(By.name("password")).sendKeys(ExcelUtils.getPassword());
-	  driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[3]/div/button")).submit();
-	  driver.findElement(By.xpath("/html/body/header/nav/div[1]/ul/li[3]/a")).click();
+	  LoginPage.loginButton(driver).click();
+		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername1());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword1());
+		 LoginPage.SignInButton(driver).submit();
+		 Thread.sleep(2000);
+		 ProfilePage.logoutButton(driver).click();
+
+
 	 
 	  String actualTitle = driver.getTitle();
 	  String expectedTitle = "Login to iDrive";
@@ -37,7 +40,7 @@ public class Log_Out {
 	  System.out.println("TC Passed : LogOut Successfully");
 	  
 	  
-	  Thread.sleep(4000);
+	  Thread.sleep(2000);
   }
 	  
   @BeforeMethod
@@ -49,7 +52,7 @@ public class Log_Out {
 
   @AfterMethod
   public void afterMethod() {
-	 // driver.quit();
+	  driver.quit();
   }
 
 
