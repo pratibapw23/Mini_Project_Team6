@@ -1,13 +1,12 @@
-
-package com.LogOutTests;
+package com.fileUploadTests;
 import org.testng.annotations.Test;
 
 
 import Utils.ExcelUtils;
 import Utils.WebDriverProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pageObjects.DashboardPage;
 import pageObjects.LoginPage;
-import pageObjects.ProfilePage;
 
 import org.testng.annotations.BeforeMethod;
 
@@ -21,39 +20,34 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
-public class Log_Out {
+
+public class FileUpload_Button_Clickable {
 	WebDriver driver;
+	
   @Test
-  public void Log_Out_Successfully() throws IOException, InterruptedException {
+  public void upload_file_Button() throws IOException, InterruptedException {
 	  LoginPage.loginButton(driver).click();
 		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername1());
 		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword1());
 		 LoginPage.SignInButton(driver).submit();
 		 Thread.sleep(2000);
-		 ProfilePage.logoutButton(driver).click();
-
-
-	 
-	  String actualTitle = driver.getTitle();
-	  String expectedTitle = "Login to iDrive";
-	  assertEquals(actualTitle,expectedTitle);
-	  System.out.println("TC Passed : LogOut Successfully");
-	  
-	  
-	  Thread.sleep(2000);
+		 DashboardPage.uploadFileLink(driver).click();
+		 
+		 
+		  String actualTitle = driver.getTitle();
+		  String expectedTitle = "Upload File";
+		  assertEquals(actualTitle,expectedTitle);
+		  System.out.println("TC Passed : File Upload Button Is Clickable ");
+		  // Thread.sleep(4000);
   }
-	  
   @BeforeMethod
   public void beforeMethod() throws IOException {
 	  driver=WebDriverProperties.setChromeDriverProperties();
-
   }
-
 
   @AfterMethod
   public void afterMethod() {
 	  driver.quit();
   }
-
 
 }

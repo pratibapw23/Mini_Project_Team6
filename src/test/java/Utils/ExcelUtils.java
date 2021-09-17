@@ -188,12 +188,55 @@ public class ExcelUtils {
 		String OldFirstName_UpdateProfile=sheet.getRow(6).getCell(1).getStringCellValue();
 		return OldFirstName_UpdateProfile;
 	}
-	public static String getOldLastName_UpdateProfile() throws IOException
-	{
+	public static String getOldLastName_UpdateProfile() throws IOException	{
 		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
 		sheet=workbook.getSheet("TestData-Rutuja");
 		String OldLastName_UpdateProfile=sheet.getRow(7).getCell(1).getStringCellValue();
 		return OldLastName_UpdateProfile;
 	}
+	public static String getWrongPassword2() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData_Dhanashree");
+		String LastName_UpdateProfile=sheet.getRow(3).getCell(6).getStringCellValue();
+		return LastName_UpdateProfile;
+	}
+	public static String getWrongUsername2() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData_Dhanashree");
+		String LastName_UpdateProfile=sheet.getRow(3).getCell(0).getStringCellValue();
+		return LastName_UpdateProfile;
+	}
+	
 
+	public static String getUsername1() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData_Dhanashree");
+		String LastName_UpdateProfile=sheet.getRow(4).getCell(0).getStringCellValue();
+		return LastName_UpdateProfile;
+	}
+	
+	public static String getPassword1() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData_Dhanashree");
+		String LastName_UpdateProfile=sheet.getRow(4).getCell(4).getStringCellValue();
+		return LastName_UpdateProfile;
+	}
+	
+	public static String[] getRegistrationDetailsDhanu() throws IOException {
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData_Dhanashree");
+		String RegistrationDetailsU[]=new String[6];
+		RegistrationDetailsU[0]=sheet.getRow(2).getCell(0).getStringCellValue();
+		RegistrationDetailsU[1]=sheet.getRow(2).getCell(1).getStringCellValue();
+		RegistrationDetailsU[2]=sheet.getRow(2).getCell(2).getStringCellValue();
+		RegistrationDetailsU[3]=sheet.getRow(2).getCell(3).getStringCellValue();
+		RegistrationDetailsU[4]=sheet.getRow(2).getCell(4).getStringCellValue();
+		RegistrationDetailsU[5]=sheet.getRow(2).getCell(5).getStringCellValue();
+		
+		return RegistrationDetailsU;
+	}
 }
