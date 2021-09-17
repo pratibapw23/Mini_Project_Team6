@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 
 import Utils.WebDriverProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pageObjects.RegisterPage;
 
 public class Alert_Check_28 {
 	WebDriver driver;
@@ -22,11 +23,12 @@ public class Alert_Check_28 {
   
   @Test//(groups= {"Login"})
   public void Vrfy_Alert() throws IOException, InterruptedException {
-	  driver.findElement(By.xpath("(//A[@href='register'][text()='Register'])[2]")).click();
-	  driver.findElement(By.xpath("(//input[@type='text'])[4]")).sendKeys("9873216540");
-	  driver.findElement(By.xpath("/html/body/form/div/div[11]/input")).click(); 
+	  RegisterPage.registerButton1(driver).click();
+	  RegisterPage.mobileNoTextbox(driver).sendKeys("9765245826");
+	  RegisterPage.registerSubmit(driver).click();
+	  
 	  // Switching to Alert        
-	  	WebDriverWait wait = new WebDriverWait(driver, 5);
+	  	WebDriverWait wait = new WebDriverWait(driver,5);
 	    wait.until(ExpectedConditions.alertIsPresent());
 	    Alert alert = driver.switchTo().alert();
 	        		
@@ -35,11 +37,11 @@ public class Alert_Check_28 {
 	        		
 	        // Displaying alert message		
 	        System.out.println(alertMessage);	
-	        Thread.sleep(5000);
+	        Thread.sleep(1000);
 	        		
 	        // Accepting alert		
 	        alert.accept();		
-	  Thread.sleep(5000);
+	  Thread.sleep(000);
 	  
 	  
   }
