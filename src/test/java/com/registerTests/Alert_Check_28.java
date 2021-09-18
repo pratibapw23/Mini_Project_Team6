@@ -24,7 +24,9 @@ public class Alert_Check_28 {
   @Test//(groups= {"Login"})
   public void Vrfy_Alert() throws IOException, InterruptedException {
 	  RegisterPage.registerButton1(driver).click();
+	  Utils.WindowScroll.scrollWindow(driver);
 	  RegisterPage.mobileNoTextbox(driver).sendKeys("9765245826");
+	  
 	  RegisterPage.registerSubmit(driver).click();
 	  
 	  // Switching to Alert        
