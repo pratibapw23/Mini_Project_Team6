@@ -80,6 +80,31 @@ public class ProfilePage {
 		element=driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div[1]/div/div[4]/div[2]"));
 		return element;
 	}
+	
+	public static WebElement Update_Profilepic(WebDriver driver) throws IOException
+	{
+		element=driver.findElement(By.xpath("//BUTTON[@class='btn btn-primary'][text()='Update Picture']"));
+		return element;
+	}
+	
+	public static WebElement Update_Profilepic_choosefile(WebDriver driver) throws IOException
+	{
+		element=driver.findElement(By.xpath("//INPUT[@id='id_image']"));
+		return element;
+	}
+	
+	public static WebElement Update_Profilepic_UpdatePicture(WebDriver driver) throws IOException
+	{
+		element=driver.findElement(By.xpath("//BUTTON[@type='submit'][text()='Update Picture']"));
+		return element;
+	}
+
+
+
+	public static WebElement getActualEmail(WebDriver driver) {
+		element=driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div[1]/div/div[2]/div[2]"));
+		return element;
+	}
 
 
 }

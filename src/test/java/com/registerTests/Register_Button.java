@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Register_Button_13 {
+public class Register_Button {
 	WebDriver driver;
 
   

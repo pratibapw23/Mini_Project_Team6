@@ -1,12 +1,12 @@
-package com.profileDataTests;
+package com.dashboardTests;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
 
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.Properties;
-
+import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -16,36 +16,38 @@ import org.testng.annotations.Test;
 import Utils.ExcelUtils;
 import Utils.WebDriverProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pageObjects.DashboardPage;
 import pageObjects.LoginPage;
 import pageObjects.ProfilePage;
 
-public class Validate_ProfileEmail_display_56 {
+@SuppressWarnings("unused")
+public class Dashboard_DeleteButton_05 {
 	WebDriver driver;
 
   
   @Test//(groups= {"Login"})
-  public void Vrfy_EmailVisibility() throws IOException, InterruptedException {
-	  
-	  LoginPage.loginButton(driver).click();
+  public void Vrfy_DeleteFile() throws IOException, InterruptedException {
+	     LoginPage.loginButton(driver).click();
 		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsernameU());
 		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPasswordU());
 		 LoginPage.SignInButton(driver).submit();
-		 Thread.sleep(2000);
 		 
-		 ProfilePage.profileButton(driver).click();
-	  
+		 DashboardPage.deleteButton(driver).click();
+		 
+		 driver.get("http://test-monk.in/dashboard");
+		 driver.navigate().refresh();
+		 
+		 DashboardPage.Searchbar(driver).sendKeys("Friends2");
+		 String ActualValue=DashboardPage.getActualFilename(driver).getText();
+		 Assert.assertNotSame(ActualValue,"NAME=FRIENDS2.JPG");
 
-		 
-		 String ActualValue=ProfilePage.getActualEmail(driver).getText();
-		 assertEquals(ActualValue,"zxcv@gm.com");
-		 
-      System.out.println("Verified Email Visibility : "+ ActualValue);
-      
+		 System.out.println("File Deletion Verified ");
+		
 	  
-	  Thread.sleep(1000);
+  }      
 	  
-	  
-  }
+ 
+  
   @BeforeMethod
   public void beforeMethod() throws IOException {
 	  driver=WebDriverProperties.setChromeDriverProperties();
