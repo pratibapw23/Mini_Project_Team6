@@ -50,6 +50,7 @@
        
        <class name="com.LogOutTests.Log_Out"/>
        <class name="com.LogOutTests.loggedIn_or_auto_loggedOut"/>
+       <class name="com.LogOutTests.Verify_LogoutButton"/>
        
        
    
