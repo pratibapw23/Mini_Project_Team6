@@ -1,0 +1,3 @@
+Installation of command line sdk tools:
+
+https://android.tutorials24x7.com/blog/how-to-install-android-sdk-tools-on-windows

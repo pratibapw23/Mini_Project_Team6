@@ -1,0 +1,9 @@
+1. Appium Desktop app: https://github.com/appium/appium-desktop/releases/tag/v1.21.0
+
+2. Android Studio/ SDK command line Tools
+Android Studio: https://developer.android.com/studio
+commandlineSDKTools: Windows	commandlinetools-win-7583922_latest.zip
+
+3. SDK Platform tools adb: https://developer.android.com/studio/releases/platform-tools
+
+
