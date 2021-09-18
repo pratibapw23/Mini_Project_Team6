@@ -23,12 +23,12 @@ public class MobileNumberCheck {
   public void verifyMobileNumber() throws IOException {
 	  
 	  LoginPage.loginButton(driver).click();
-	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
-	  LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
+	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsernameU());
+	  LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPasswordU());
 	  LoginPage.SignInButton(driver).submit();
-	  LoginPage.profileLink(driver).click();
+	  ProfilePage.profileButton(driver).click();
 	  String ActualValue=ProfilePage.getActualMobileNumber(driver).getText();
-	  assertEquals(ActualValue, "6754902280");
+	  assertEquals(ActualValue, "1234567890");
 	  System.out.println("Check with the Mobile Number");
 	  System.out.println("Test Case Verified Successfully");
 	  
