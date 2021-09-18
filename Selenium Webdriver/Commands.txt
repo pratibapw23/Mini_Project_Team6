@@ -1,0 +1,30 @@
+-Provide testng.xml file at runtime insted of specifying it in pom.xml configuration: (run specified testng file at run time)
+
+in pom.xml-> replace name of testng file i.e: 
+<suiteXmlFile>testng1.xml</suiteXmlFile>
+To
+<suiteXmlFile>${testngfile}</suiteXmlFile>
+no in command line run:
+1. mvn clean test -DtestngFile=testng6.xml
+
+-AutoIt Script extension:
+.au3
+
+-For checking toast message:
+String loginStatus = new WebDriverWait(webDriver, 10).until(ExpectedConditions.elementToBeClickable(By.id("toast-message"))).getText();
+    if (loginStatus.contains("enter valid")) {
+        System.out.println("Login Failed: " + loginStatus);
+    } else {
+        System.out.println("Login Success:" + loginStatus);
+    }
+
+- get remote changes to local repo after merging:
+
+1. add and Commit all changes from local repo
+2. Git Pull
+
+-RUn testng.xml file from cmd:
+mvn clean test -DsuiteXmlFile=testng.xml 
+
+-RUN Single unit test
+mvn -Dtest=Verify_Image_Size test

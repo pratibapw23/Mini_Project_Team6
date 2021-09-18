@@ -1,0 +1,19 @@
+1. Installing TestNg:
+install new sw->http://download.eclipse.org/releases/2019-06
+
+2. MojoExecutionException: while running test cases from command prompt- maven surefire-plugin
+-Replaced standars in .xml file to:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+or
+-Use JDK insted of jar windows->prefrences->java->installed jar's->set path to-c->programFiles->java->jdk...
+-Changed environment variables path
+
+3. Providing relative path:
+e.g- ".//Files//User_Credentials.xlsx"
+
+
+Test case template:
+https://docs.google.com/spreadsheets/u/0/d/1SsK2DQ4-f8U0MHikj8uLEoUFCtJtnPgo/htmlview#
+
+

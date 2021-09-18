@@ -1,0 +1,517 @@
+{
+	"info": {
+		"_postman_id": "56e42b66-21aa-4b1b-8f6c-f4ca93db076a",
+		"name": "AUT_iDrive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TS_Positive_POST (TS-004)",
+			"item": [
+				{
+					"name": "TC_positivePost_01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"\r",
+									"//Add only required fields in the POST request with some correct values and verify status code is 201\r",
+									"pm.test(\"verify status code is 201 by adding only required field in request body\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"mobile_number\": \"7972727664\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_positivePost_02",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//send file through API and verify full response body\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Send file through api and verify full response body\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"prati@gmail.com\");\r",
+									"     pm.expect(pm.response.text()).to.include(\"Issues.txt\");\r",
+									"       pm.expect(pm.response.text()).to.include(\"This files contains issues and solutions\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/D:/Training/Mini Project/Issues.txt"
+								},
+								{
+									"key": "demail",
+									"value": "prati@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "affiliation",
+									"value": "12345678",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "file1",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "Issues.txt",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This files contains issues and solutions",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/drive_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"drive_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_positivePost_03",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Verify full response body by adding values in optional field and required field in request body\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"pratibha@gmail.com\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"8989897676\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"Female\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"http://test-monk.in/media/none\");\r",
+									"});\r",
+									"pm.test(\"Verify status code is 201 by adding values in optional field and required field in request body\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n        \"id\": 101,\r\n        \"temail\": \"pratibha@gmail.com\",\r\n        \"mobile_number\": \"8989897676\",\r\n        \"gender\": \"Female\"\r\n       \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_positivePost_04",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Verify full response body by adding required field and one optional field in request body\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"xxx@gmail.com\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"7972727664\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"None\");\r",
+									"     pm.expect(pm.response.text()).to.include(\"http://test-monk.in/media/none\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"mobile_number\": \"7972727664\",\r\n        \"demail\": \"prati@gmail.com\"\r\n         \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TS_Negative_POST/PUT (TS-001)",
+			"item": [
+				{
+					"name": "TC_negativePost_01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Put invalid data in field in request body and verify status code is 403- Bad Request\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"temail\": \"prati\",\r\n        \"mobile_number\": \"7972727664\",\r\n        \"gender\": \"male\"\r\n\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_negativePost_02",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Add invalid data type in request body and send post request and verify it returns 403-Bad Request\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 110,\r\n        \"temail\": \"pratibha@gmail.com\",\r\n        \"mobile_number\": \"8483948393\",\r\n        \"gender\": 99\r\n       \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_negativePost_03",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 111,\r\n        \"temail\": \"abc@gmail.com\",\r\n        \"mobile_number\": \"8483948393\",\r\n        \"mobile_number\": \"6564737483\",\r\n        \"gender\": \"Female\"\r\n       \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_negativePost_04",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"POST already existing resource and verify status code is 409- Conflict\", function () {\r",
+									"    pm.response.to.have.status(409);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n       \"id\": 156,\r\n    \"temail\": \"tushar@g.com\",\r\n    \"mobile_number\": \"7972727664\",\r\n    \"gender\": \"Male\"\r\n    \r\n       \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TS_Negative_DELETE (TS-003)",
+			"item": [
+				{
+					"name": "TC_negativeDelete_01",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://test-monk.in/api/user/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TS_Negative_Endpoint  (TS-002)",
+			"item": [
+				{
+					"name": "TC_negativeEndpoint_01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"GET request to invalid endpoint and verify status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users_data",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "perform post on user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"username\": \"prati1\",\r\n        \"first_name\": \"fdsk\",\r\n        \"last_name\": \"lkjl\",\r\n        \"email\": \"tushar@g.com\",\r\n        \"password\": \"pbkdf2_sha256$216000$UiD7aRDrVQNC$akyyLshVD5QETTFkO0dvMMZhRrAwh8UndtuzCa5SXew=\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://test-monk.in/api/user/",
+					"protocol": "http",
+					"host": [
+						"test-monk",
+						"in"
+					],
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://test-monk.in"
+		}
+	]
+}

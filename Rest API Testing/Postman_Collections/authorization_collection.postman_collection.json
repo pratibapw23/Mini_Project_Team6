@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "02f96534-5939-4f87-9a7b-5f63775d0dd2",
+		"name": "authorization_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authorization",
+			"item": [
+				{
+					"name": "TC_Authorization_01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.be.header(\"Content-Type\",\"application/json\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tushar\",\r\n    \"password\":\"tushar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://test-monk.in/api-token-auth/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api-token-auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_02",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.be.header(\"Content-Type\",\"application/json\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tushar\",\r\n    \"password\":\"wrong\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://test-monk.in/api-token-auth/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api-token-auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_03",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"pm.environment.get(\"variable_key\");\r",
+									"    pm.response.to.be.header(\"Content-Type\",\"application/json\");\r",
+									"});\r",
+									"\r",
+									"var res = JSON.parse(responseBody);\r",
+									"console.log(res);\r",
+									"postman.setEnvironmentVariable(\"token\", res.token);\r",
+									"\r",
+									"pm.variables.get(\"token\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tushar\",\r\n    \"password\":\"tushar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://test-monk.in/api-token-auth/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api-token-auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_04",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test Token should not be created\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.be.header(\"Content-Type\",\"application/json\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tushar\",\r\n    \"password\":\"wrong\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://test-monk.in/api-token-auth/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api-token-auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_05",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Token is Verified Successfully\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.be.header(\"Content-Type\",\"application/json\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://test-monk.in/authorization/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"authorization",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_06",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Token is not Verified Successfully\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"pm.test(\"Status Code Passed\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token wrong_token_value",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://test-monk.in/authorization/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"authorization",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_07",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Credentials not Provided\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"pm.test(\"Status Code Passed\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token wrong_token_value",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://test-monk.in/authorization/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"authorization",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,319 @@
+{
+	"id": "04b48ff4-82e1-4437-a7b6-cca28d4ffb8b",
+	"name": "AUT_iDrive",
+	"timestamp": "2021-09-16T09:41:14.958Z",
+	"collection_id": "15857436-56e42b66-21aa-4b1b-8f6c-f4ca93db076a",
+	"folder_id": 0,
+	"environment_id": "57c3adde-1058-4d48-9959-a2fd54fd6fbb",
+	"totalPass": 8,
+	"totalFail": 5,
+	"results": [
+		{
+			"id": "093e76d5-1ead-4367-b3d0-321f980cbcc8",
+			"name": "TC_positivePost_01",
+			"url": "http://test-monk.in/api/user_data/",
+			"time": 220,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"verify status code is 201 by adding only required field in request body": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify status code is 201 by adding only required field in request body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				220
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"verify status code is 201 by adding only required field in request body": true
+				}
+			]
+		},
+		{
+			"id": "cca7f60b-5802-4a9d-8e7f-4d81f1cf1369",
+			"name": "TC_positivePost_02",
+			"url": "http://test-monk.in/api/drive_data/",
+			"time": 609,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Successful POST request": false,
+				"Send file through api and verify full response body": false
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Send file through api and verify full response body": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				609
+			],
+			"allTests": [
+				{
+					"Successful POST request": false,
+					"Send file through api and verify full response body": false
+				}
+			]
+		},
+		{
+			"id": "66df8820-e530-4fc9-affd-860a25fe3e90",
+			"name": "TC_positivePost_03",
+			"url": "http://test-monk.in/api/user_data/",
+			"time": 180,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Verify full response body by adding values in optional field and required field in request body": true,
+				"Verify status code is 201 by adding values in optional field and required field in request body": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify full response body by adding values in optional field and required field in request body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify status code is 201 by adding values in optional field and required field in request body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				180
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Verify full response body by adding values in optional field and required field in request body": true,
+					"Verify status code is 201 by adding values in optional field and required field in request body": true
+				}
+			]
+		},
+		{
+			"id": "3f3b9c97-424d-42d8-b9d9-bc98453d7dff",
+			"name": "TC_positivePost_04",
+			"url": "http://test-monk.in/api/user_data/",
+			"time": 240,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Verify full response body by adding required field and one optional field in request body": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify full response body by adding required field and one optional field in request body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				240
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Verify full response body by adding required field and one optional field in request body": true
+				}
+			]
+		},
+		{
+			"id": "5d987dae-9c80-4979-a3b7-da9f2c2fafb7",
+			"name": "TC_negativePost_01",
+			"url": "http://test-monk.in/api/user_data/",
+			"time": 225,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Put invalid data in field in request body and verify status code is 403- Bad Request": false
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Put invalid data in field in request body and verify status code is 403- Bad Request": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				225
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Put invalid data in field in request body and verify status code is 403- Bad Request": false
+				}
+			]
+		},
+		{
+			"id": "fcf05600-4980-4741-981c-1967b54f18c4",
+			"name": "TC_negativePost_02",
+			"url": "http://test-monk.in/api/user_data/",
+			"time": 612,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Add invalid data type in request body and send post request and verify it returns 403-Bad Request": false
+			},
+			"testPassFailCounts": {
+				"Add invalid data type in request body and send post request and verify it returns 403-Bad Request": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				612
+			],
+			"allTests": [
+				{
+					"Add invalid data type in request body and send post request and verify it returns 403-Bad Request": false
+				}
+			]
+		},
+		{
+			"id": "c44655d9-72b4-4309-8a35-98caf3fc2c34",
+			"name": "TC_negativePost_03",
+			"url": "http://test-monk.in/api/user_data/",
+			"time": 237,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				237
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c93cb0d8-1446-4f52-8820-a06c7b2c3f94",
+			"name": "TC_negativePost_04",
+			"url": "http://test-monk.in/api/user_data/",
+			"time": 178,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"POST already existing resource and verify status code is 409- Conflict": false
+			},
+			"testPassFailCounts": {
+				"POST already existing resource and verify status code is 409- Conflict": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				178
+			],
+			"allTests": [
+				{
+					"POST already existing resource and verify status code is 409- Conflict": false
+				}
+			]
+		},
+		{
+			"id": "5b248b47-e469-4496-8579-e4eaa5b23138",
+			"name": "TC_negativeDelete_01",
+			"url": "http://test-monk.in/api/user/",
+			"time": 132,
+			"responseCode": {
+				"code": 405,
+				"name": "Method Not Allowed"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				132
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2633,
+	"collection": {
+		"requests": [
+			{
+				"id": "093e76d5-1ead-4367-b3d0-321f980cbcc8",
+				"method": "POST"
+			},
+			{
+				"id": "cca7f60b-5802-4a9d-8e7f-4d81f1cf1369",
+				"method": "POST"
+			},
+			{
+				"id": "66df8820-e530-4fc9-affd-860a25fe3e90",
+				"method": "POST"
+			},
+			{
+				"id": "3f3b9c97-424d-42d8-b9d9-bc98453d7dff",
+				"method": "POST"
+			},
+			{
+				"id": "5d987dae-9c80-4979-a3b7-da9f2c2fafb7",
+				"method": "POST"
+			},
+			{
+				"id": "fcf05600-4980-4741-981c-1967b54f18c4",
+				"method": "POST"
+			},
+			{
+				"id": "c44655d9-72b4-4309-8a35-98caf3fc2c34",
+				"method": "POST"
+			},
+			{
+				"id": "c93cb0d8-1446-4f52-8820-a06c7b2c3f94",
+				"method": "POST"
+			},
+			{
+				"id": "5b248b47-e469-4496-8579-e4eaa5b23138",
+				"method": "DELETE"
+			},
+			{
+				"id": "d9fb053c-bd5c-4243-9ce4-66e7163aae72",
+				"method": "GET"
+			}
+		]
+	}
+}

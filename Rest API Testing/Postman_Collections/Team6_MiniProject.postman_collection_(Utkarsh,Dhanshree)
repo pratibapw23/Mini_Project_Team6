@@ -1,0 +1,797 @@
+{
+	"info": {
+		"_postman_id": "a8bdfecd-6b52-459b-93c7-fc48d5ea7649",
+		"name": "Team6_MiniProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "User_001_Fetch All Posts By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_002_Delete Single Post By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/166/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"166",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_003_Put Single Post id=164",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"username\": \"K\",\r\n        \"first_name\": \"mmm\",\r\n        \"last_name\": \"pol\",\r\n        \"email\": \"z@gmail.com\",\r\n        \"password\": \"pbkdf2_sha256$260000$aFTysutT6Svpzq7vmMHH6M$08rRD6P3jwHPkBKzjZoCdth+QQ23qknMuI9x3cGzgc8=\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/164/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"164",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_010_Fetch Single_ id= 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/4/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_012_Update_All_Details_Id=10",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 10,\r\n    \"username\": \"dhanu\",\r\n    \"first_name\": \"Sita\",\r\n    \"last_name\": \"Ram\",\r\n    \"email\": \"sita@g.com\",\r\n    \"password\": \"pbkdf2_sha256$260000$m7PSmJR84Otbm3lLpNMswB$l5AU2eGit/3nCSEUzi6hH0ufAXVsNthtrB6wfUZf8Yk=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/10/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"10",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_009_Update Lastname",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string LastName updeted\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Radha\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 4,\r\n        \"username\": \"krishna\",\r\n        \"first_name\": \"Krishna\",\r\n        \"last_name\": \"Radha\",\r\n        \"email\": \"krishna@g.com\",\r\n        \"password\": \"pbkdf2_sha256$216000$a4TthSZHv1ft$JImJpesm7/pDQqBGQlFJ4w/VBerbHrG7tqzUC8PTr9o=\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/4/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_016_Put Single Post id=134",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Body is correct\", function () {\r",
+									"    pm.response.to.have.body(\"response_body_string\");\r",
+									"});\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 134,\r\n        \"username\": \"Rutuja\",\r\n        \"first_name\": \"sfsdf\",\r\n        \"last_name\": \"Rutu\",\r\n        \"email\": \"\",\r\n        \"password\": \"pbkdf2_sha256$260000$nePp0G4M6qhCjrO7smkMG0$jUxfkYr7yq3Rv6MKLdjGJ8Wm3wRQurnO4KhWiAvIqao=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/134/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"134",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_018_Delete Non Existing Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/20000/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"20000",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_019_Update with Non Existing ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/2090/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"2090",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_021_Update First_name by  Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"id\": 146,\r\n        \"username\": \"utkarshb\",\r\n        \"first_name\": \"Uttu\",\r\n        \"last_name\": \"Borawake\",\r\n        \"email\": \"qwpo@gmail.com\",\r\n        \"password\": \"pbkdf2_sha256$260000$BftH63qArXbId6IAZp1x9i$DS0XefkV0SHKUtS6t51cZbaBKck779XnSs3jXdXNR+g=\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/146/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"146",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_007_Post _Multiple_Elements_using_id,username,firstname,lastname",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"{{id}}\",\r\n    \"username\": \"{{username}}\",\r\n    \"first_name\": \"{{first_name}}\",\r\n    \"last_name\": \"{{last_name}}\",\r\n    \"email\": \"t@g.com\",\r\n    \"password\": \"pbkdf2_sha256$216000$a4TthSZHv1ft$JImJpesm7/pDQqBGQlFJ4w/VBerbHrG7tqzUC8PTr9o=\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_006_Post_ Multiple _elements_Using _Username",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"username\": \"{{username}}\",\r\n        \"first_name\": \"ShriKrishna\",\r\n        \"last_name\": \"Prabhu\", \r\n        \"email\": \"t@g.com\",\r\n        \"password\": \"pbkdf2_sha256$216000$a4TthSZHv1ft$JImJpesm7/pDQqBGQlFJ4w/VBerbHrG7tqzUC8PTr9o=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_010_Fetch_sngle_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/6/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_014_Update user_name ID=10",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 10,\r\n        \"username\": \"Dhanshree13\",\r\n        \"first_name\": \"Utkarsh\",\r\n        \"last_name\": \"Borawake\",\r\n        \"email\": \"a@g.com\",\r\n        \"password\": \"pbkdf2_sha256$260000$m7PSmJR84Otbm3lLpNMswB$l5AU2eGit/3nCSEUzi6hH0ufAXVsNthtrB6wfUZf8Yk=\"\r\n    }\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/10/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"10",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_011_Update _email_id=4_using_PATCH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"balram@gmail.com\");\r",
+									"});\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"balram@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/4/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative",
+			"item": [
+				{
+					"name": "User_005_Post multiple existing username",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"{{id}}\",\r\n    \"username\": \"{{username}}\",\r\n    \"first_name\": \"{{first_name}}\",\r\n    \"last_name\": \"{{last_name}}\",\r\n    \"email\": \"t@g.com\",\r\n    \"password\": \"pbkdf2_sha256$216000$a4TthSZHv1ft$JImJpesm7/pDQqBGQlFJ4w/VBerbHrG7tqzUC8PTr9o=\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_004_Fetch Single Post id not exist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://test-monk.in/api/user/1001",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api",
+								"user",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_008_Put any non-existing id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"username\": \"dhanu\",\r\n    \"first_name\": \"Dhanu\",\r\n    \"last_name\": \"pool\",\r\n    \"email\": \"abcd@g.com\",\r\n    \"password\": \"pbkdf2_sha256$260000$m7PSmJR84Otbm3lLpNMswB$l5AU2eGit/3nCSEUzi6hH0ufAXVsNthtrB6wfUZf8Yk=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/2/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_015_PostData Without adding Username and Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 101,\r\n        \"first_name\": \"lfdjkj\",\r\n        \"last_name\": \"kljljfd\",\r\n        \"email\": \"fsd@dfg.com\"\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_016_Put_Data Without adding Username and Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 101,\r\n        \"first_name\": \"lfdjkj\",\r\n        \"last_name\": \"kljljfd\",\r\n        \"email\": \"fsd@dfg.com\"\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/101/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"101",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_013_Post data using any existing id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 163,\r\n        \"username\": \"john\",\r\n        \"first_name\": \"John\",\r\n        \"last_name\": \"Cena\",\r\n        \"email\": \"t@g.com\",\r\n        \"password\": \"pbkdf2_sha256$216000$a4TthSZHv1ft$JImJpesm7/pDQqBGQlFJ4w/VBerbHrG7tqzUC8PTr9o=\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

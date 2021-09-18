@@ -1,0 +1,2326 @@
+{
+	"info": {
+		"_postman_id": "56e42b66-21aa-4b1b-8f6c-f4ca93db076a",
+		"name": "AUT_iDrive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TS_Positive_POST (TS-004)",
+			"item": [
+				{
+					"name": "TC_positivePost_01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"\r",
+									"//Add only required fields in the POST request with some correct values and verify status code is 201\r",
+									"pm.test(\"verify status code is 201 by adding only required field in request body\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"mobile_number\": \"7972727664\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_positivePost_03",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Verify full response body by adding values in optional field and required field in request body\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"pratibha@gmail.com\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"8989897676\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"Female\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"http://test-monk.in/media/none\");\r",
+									"});\r",
+									"pm.test(\"Verify status code is 201 by adding values in optional field and required field in request body\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n        \"id\": 101,\r\n        \"temail\": \"pratibha@gmail.com\",\r\n        \"mobile_number\": \"8989897676\",\r\n        \"gender\": \"Female\"\r\n       \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_positivePost_04",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Verify full response body by adding required field and one optional field in request body\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"xxx@gmail.com\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"7972727664\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"None\");\r",
+									"     pm.expect(pm.response.text()).to.include(\"http://test-monk.in/media/none\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"mobile_number\": \"7972727664\",\r\n        \"demail\": \"prati@gmail.com\"\r\n         \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TS_Negative_POST/PUT (TS-001)",
+			"item": [
+				{
+					"name": "TC_negativePost_01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Put invalid data in field in request body and verify status code is 403- Bad Request\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"temail\": \"prati\",\r\n        \"mobile_number\": \"7972727664\",\r\n        \"gender\": \"male\"\r\n\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_negativePost_02",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Add invalid data type in request body and send post request and verify it returns 403-Bad Request\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 110,\r\n        \"temail\": \"pratibha@gmail.com\",\r\n        \"mobile_number\": \"8483948393\",\r\n        \"gender\": 99\r\n       \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_negativePost_04",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"POST already existing resource and verify status code is 409- Conflict\", function () {\r",
+									"    pm.response.to.have.status(409);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n       \"id\": 156,\r\n    \"temail\": \"tushar@g.com\",\r\n    \"mobile_number\": \"7972727664\",\r\n    \"gender\": \"Male\"\r\n    \r\n       \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TS_Negative_Endpoint  (TS-002)",
+			"item": [
+				{
+					"name": "TC_negativeEndpoint_01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"GET request to invalid endpoint and verify status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users_data/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users_data",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TS_Authorization (TS_009)",
+			"item": [
+				{
+					"name": "TC_Authorization_01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.be.header(\"Content-Type\",\"application/json\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tushar\",\r\n    \"password\":\"tushar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://test-monk.in/api-token-auth/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api-token-auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_02",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.be.header(\"Content-Type\",\"application/json\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tushar\",\r\n    \"password\":\"wrong\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://test-monk.in/api-token-auth/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api-token-auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_03",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"pm.environment.get(\"variable_key\");\r",
+									"    pm.response.to.be.header(\"Content-Type\",\"application/json\");\r",
+									"});\r",
+									"\r",
+									"var res = JSON.parse(responseBody);\r",
+									"console.log(res);\r",
+									"postman.setEnvironmentVariable(\"token\", res.token);\r",
+									"\r",
+									"pm.variables.get(\"token\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tushar\",\r\n    \"password\":\"tushar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://test-monk.in/api-token-auth/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api-token-auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_04",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test Token should not be created\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.be.header(\"Content-Type\",\"application/json\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tushar\",\r\n    \"password\":\"wrong\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://test-monk.in/api-token-auth/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api-token-auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_05",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Token is Verified Successfully\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.be.header(\"Content-Type\",\"application/json\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://test-monk.in/authorization/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"authorization",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_06",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Token is not Verified Successfully\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"pm.test(\"Status Code Passed\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token wrong_token_value",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://test-monk.in/authorization/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"authorization",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_Authorization_07",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Credentials not Provided\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"pm.test(\"Status Code Passed\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token wrong_token_value",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://test-monk.in/authorization/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"authorization",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TS_ResponseTime(TS_005)",
+			"item": [
+				{
+					"name": "TC_ResponceTime_001",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user_data/3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user_data",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_ResponceTime_002",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(pm.response.responseTime)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/user/129/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"129",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_ResponceTime_003",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(pm.response.responseTime)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/user",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TS_GobalVariable(TS_006)",
+			"item": [
+				{
+					"name": "TC_GlobalVariable_001",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"console.log(pm.globals.get(\"baseURL\"))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user_data",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user_data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_GlobalVariable_002",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"console.log(pm.globals.get(\"baseURL\"))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"r1\",\r\n    \"first_name\": \"Rutuja\",\r\n    \"last_name\": \"J\",\r\n    \"email\": \"ruu@gmail.com\",\r\n    \"password\": \"pbkdf2_sha256$260000$nePp0G4M6qhCjrO7smkMG0$jUxfkYr7yq3Rv6MKLdjGJ8Wm3wRQurnO4KhWiAvIqao=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user/119/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"119",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_GlobalVariable_003",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"console.log(pm.globals.get(\"baseURL\"))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"r01\",\r\n    \"first_name\": \"Rutuja\",\r\n    \"last_name\": \"J\",\r\n    \"email\": \"ruu@gmail.com\",\r\n    \"password\": \"pbkdf2_sha256$260000$nePp0G4M6qhCjrO7smkMG0$jUxfkYr7yq3Rv6MKLdjGJ8Wm3wRQurnO4KhWiAvIqao=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_GlobalVariable_004",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"console.log(pm.globals.get(\"baseURL\"))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"nljj101\",\r\n    \"email\": \"fsd@g.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user/119/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"119",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TS_MemoryRequired(TS-008)",
+			"item": [
+				{
+					"name": "TC_MemoryRequired_001",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(pm.response.size())"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://test-monk.in/api/user_data/11",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api",
+								"user_data",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TS_CollectionVariable(TS_007)",
+			"item": [
+				{
+					"name": "TC_CollectionVariable_001",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"console.log(pm.collectionVariables.get(\"CollectionVar\"))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{CollectionVar}}/user_data",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{CollectionVar}}",
+								"user_data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_CollectionVariable_002",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"r1\",\r\n    \"first_name\": \"Rutu\",\r\n    \"password\": \"pbkdf2_sha256$260000$nePp0G4M6qhCjrO7smkMG0$jUxfkYr7yq3Rv6MKLdjGJ8Wm3wRQurnO4KhWiAvIqao=\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{CollectionVar}}/user/119/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{CollectionVar}}",
+								"user",
+								"119",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_CollectionVariable_003",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"r16\",\r\n    \"first_name\": \"Rutu\",\r\n    \"password\": \"pbkdf2_sha256$260000$nePp0G4M6qhCjrO7smkMG0$jUxfkYr7yq3Rv6MKLdjGJ8Wm3wRQurnO4KhWiAvIqao=\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{CollectionVar}}/user/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{CollectionVar}}",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_CollectionVariable_004",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"r01\",\r\n    \"last_name\": \"Jh\",\r\n    \"password\": \"pbkdf2_sha256$260000$nePp0G4M6qhCjrO7smkMG0$jUxfkYr7yq3Rv6MKLdjGJ8Wm3wRQurnO4KhWiAvIqao=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{CollectionVar}}/user/129/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{CollectionVar}}",
+								"user",
+								"129",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TS_Positive_PUT/GET (TS-010)",
+			"item": [
+				{
+					"name": "TC_positivePut_16",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Your test name\", function () {  \r",
+									"    pm.expect(jsonData.first_name).to.eql(\"ankita\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"id\": 52,\r\n    \"username\": \"aaa\",\r\n    \"first_name\": \"ankita\",\r\n    \"last_name\": \"bbb\",\r\n    \"email\": \"aaa@gmail.com\",\r\n    \"password\": \"pbkdf2_sha256$260000$2JpFZOswbLBu86YXqoCOha$EuXZtHuGPO9forUBRUEp+jL7J5tLecOzeLGWqzGkm1Q=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/52/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"52",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_positiveGet_18",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"validte value for key id\", function () {\r",
+									"  pm.expect(jsonData.id).to.eql(5);\r",
+									" \r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/drive_data/5/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"drive_data",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_positivePatch_17",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    pm.expect(jsonData.filename).to.eql(\"TextFile1\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"filename\": \"TextFile1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/drive_data/20/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"drive_data",
+								"20",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_positivePost_15",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    pm.expect(jsonData.email).to.eql(\"abc@gmail.com\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n    \r\n    \"username\": \"ankitaJa\",\r\n    \"email\": \"abc@gmail.com\",\r\n    \"password\": \"pbkdf2_sha256$216000$hIdyXxSIybyY$3ASzghiv0O7vmGM+9V0EcgDtdQTHOKOEqen57nYzgNM=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TC_Negative_DELETE/PUT/POST (TS-011)",
+			"item": [
+				{
+					"name": "TC_negativeDelete_07",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://test-monk.in/api/user_data/70/",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api",
+								"user_data",
+								"70",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_negativePut_08",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"username\": \"ankita_j\",\r\n    \"first_name\": \"Anki\",\r\n    \"email\": \"ankita.j@gmail.com\",\r\n    \"password\": \"pbkdf2_sha256$260000$hBRdbSOkc0nAoSZud6gf3l$xi7OBJydlM+v4zVwt2uvbVzH6xntQ0q3mRCuytrasNQ=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/70/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"70",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_negativePost_13",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Body is correct\", function () {\r",
+									"    pm.response.to.have.body(\r",
+									"        {\r",
+									"    \"username\": [\r",
+									"        \"This field is required.\"\r",
+									"    ],\r",
+									"    \"password\": [\r",
+									"        \"This field is required.\"\r",
+									"    ]\r",
+									"}\r",
+									"    );\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"last_name\": \"hkj\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "User_001_Fetch All Posts By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_002_Delete Single Post By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/166/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"166",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_003_Put Single Post id=164",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"username\": \"K\",\r\n        \"first_name\": \"mmm\",\r\n        \"last_name\": \"pol\",\r\n        \"email\": \"z@gmail.com\",\r\n        \"password\": \"pbkdf2_sha256$260000$aFTysutT6Svpzq7vmMHH6M$08rRD6P3jwHPkBKzjZoCdth+QQ23qknMuI9x3cGzgc8=\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/164/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"164",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_010_Fetch Single_ id= 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/4/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_012_Update_All_Details_Id=10",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 10,\r\n    \"username\": \"dhanu\",\r\n    \"first_name\": \"Sita\",\r\n    \"last_name\": \"Ram\",\r\n    \"email\": \"sita@g.com\",\r\n    \"password\": \"pbkdf2_sha256$260000$m7PSmJR84Otbm3lLpNMswB$l5AU2eGit/3nCSEUzi6hH0ufAXVsNthtrB6wfUZf8Yk=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/10/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"10",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_009_Update Lastname",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string LastName updeted\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Radha\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 4,\r\n        \"username\": \"krishna\",\r\n        \"first_name\": \"Krishna\",\r\n        \"last_name\": \"Radha\",\r\n        \"email\": \"krishna@g.com\",\r\n        \"password\": \"pbkdf2_sha256$216000$a4TthSZHv1ft$JImJpesm7/pDQqBGQlFJ4w/VBerbHrG7tqzUC8PTr9o=\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/4/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_016_Put Single Post id=134",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Body is correct\", function () {\r",
+									"    pm.response.to.have.body(\"response_body_string\");\r",
+									"});\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 134,\r\n        \"username\": \"Rutuja\",\r\n        \"first_name\": \"sfsdf\",\r\n        \"last_name\": \"Rutu\",\r\n        \"email\": \"\",\r\n        \"password\": \"pbkdf2_sha256$260000$nePp0G4M6qhCjrO7smkMG0$jUxfkYr7yq3Rv6MKLdjGJ8Wm3wRQurnO4KhWiAvIqao=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/134/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"134",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_018_Delete Non Existing Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/20000/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"20000",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_019_Update with Non Existing ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/2090/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"2090",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_021_Update First_name by  Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"id\": 146,\r\n        \"username\": \"utkarshb\",\r\n        \"first_name\": \"Uttu\",\r\n        \"last_name\": \"Borawake\",\r\n        \"email\": \"qwpo@gmail.com\",\r\n        \"password\": \"pbkdf2_sha256$260000$BftH63qArXbId6IAZp1x9i$DS0XefkV0SHKUtS6t51cZbaBKck779XnSs3jXdXNR+g=\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/146/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"146",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_007_Post _Multiple_Elements_using_id,username,firstname,lastname",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"{{id}}\",\r\n    \"username\": \"{{username}}\",\r\n    \"first_name\": \"{{first_name}}\",\r\n    \"last_name\": \"{{last_name}}\",\r\n    \"email\": \"t@g.com\",\r\n    \"password\": \"pbkdf2_sha256$216000$a4TthSZHv1ft$JImJpesm7/pDQqBGQlFJ4w/VBerbHrG7tqzUC8PTr9o=\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_006_Post_ Multiple _elements_Using _Username",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"username\": \"{{username}}\",\r\n        \"first_name\": \"ShriKrishna\",\r\n        \"last_name\": \"Prabhu\", \r\n        \"email\": \"t@g.com\",\r\n        \"password\": \"pbkdf2_sha256$216000$a4TthSZHv1ft$JImJpesm7/pDQqBGQlFJ4w/VBerbHrG7tqzUC8PTr9o=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_010_Fetch_sngle_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/6/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_014_Update user_name ID=10",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 10,\r\n        \"username\": \"Dhanshree13\",\r\n        \"first_name\": \"Utkarsh\",\r\n        \"last_name\": \"Borawake\",\r\n        \"email\": \"a@g.com\",\r\n        \"password\": \"pbkdf2_sha256$260000$m7PSmJR84Otbm3lLpNMswB$l5AU2eGit/3nCSEUzi6hH0ufAXVsNthtrB6wfUZf8Yk=\"\r\n    }\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/10/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"10",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_011_Update _email_id=4_using_PATCH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"balram@gmail.com\");\r",
+									"});\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"balram@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/4/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative",
+			"item": [
+				{
+					"name": "User_005_Post multiple existing username",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"{{id}}\",\r\n    \"username\": \"{{username}}\",\r\n    \"first_name\": \"{{first_name}}\",\r\n    \"last_name\": \"{{last_name}}\",\r\n    \"email\": \"t@g.com\",\r\n    \"password\": \"pbkdf2_sha256$216000$a4TthSZHv1ft$JImJpesm7/pDQqBGQlFJ4w/VBerbHrG7tqzUC8PTr9o=\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_004_Fetch Single Post id not exist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://test-monk.in/api/user/1001",
+							"protocol": "http",
+							"host": [
+								"test-monk",
+								"in"
+							],
+							"path": [
+								"api",
+								"user",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_008_Put any non-existing id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"username\": \"dhanu\",\r\n    \"first_name\": \"Dhanu\",\r\n    \"last_name\": \"pool\",\r\n    \"email\": \"abcd@g.com\",\r\n    \"password\": \"pbkdf2_sha256$260000$m7PSmJR84Otbm3lLpNMswB$l5AU2eGit/3nCSEUzi6hH0ufAXVsNthtrB6wfUZf8Yk=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/2/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_015_PostData Without adding Username and Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 101,\r\n        \"first_name\": \"lfdjkj\",\r\n        \"last_name\": \"kljljfd\",\r\n        \"email\": \"fsd@dfg.com\"\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_016_Put_Data Without adding Username and Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 101,\r\n        \"first_name\": \"lfdjkj\",\r\n        \"last_name\": \"kljljfd\",\r\n        \"email\": \"fsd@dfg.com\"\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/101/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"101",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_013_Post data using any existing id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 163,\r\n        \"username\": \"john\",\r\n        \"first_name\": \"John\",\r\n        \"last_name\": \"Cena\",\r\n        \"email\": \"t@g.com\",\r\n        \"password\": \"pbkdf2_sha256$216000$a4TthSZHv1ft$JImJpesm7/pDQqBGQlFJ4w/VBerbHrG7tqzUC8PTr9o=\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://test-monk.in"
+		}
+	]
+}
