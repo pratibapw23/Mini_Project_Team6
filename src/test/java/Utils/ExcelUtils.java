@@ -279,17 +279,21 @@ public class ExcelUtils {
 
 	}
 	
-	public static String getUserNameA() throws IOException {
-		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
-		sheet=workbook.getSheet("TestData-Ankita");
-		String user=sheet.getRow(1).getCell(0).getStringCellValue();
-		return user;
-	}
+
 	public static String getPasswordA() throws IOException {
 		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
 		sheet=workbook.getSheet("TestData-Ankita");
-		String user=sheet.getRow(1).getCell(1).getStringCellValue();
-		return user;
+		String pass=sheet.getRow(1).getCell(1).getStringCellValue();
+		return pass;
+	}
+	
+	public static String getUserNameA() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Ankita");
+		String username=sheet.getRow(1).getCell(0).getStringCellValue();
+		return username;
+		
 	}
 	
 }
