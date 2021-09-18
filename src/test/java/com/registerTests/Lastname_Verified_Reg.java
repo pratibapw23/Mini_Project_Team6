@@ -63,8 +63,8 @@ public class Lastname_Verified_Reg {
 	  Assert.assertEquals(ActualTitle, ExpectedTitle);
 	  System.out.println("TC Passed : LastName Verified Successfully");
 	  
-	 // email=registrationDetails[3];
-	 // DeleteUser.deleteUser(email, driver);
+	 email=registrationDetails[3];
+	DeleteUser.deleteUser(email, driver);
 
 	  
 	  
