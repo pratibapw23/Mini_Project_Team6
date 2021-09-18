@@ -65,5 +65,13 @@ WebDriver driver;
 		element=driver.findElement(By.xpath("//DIV[@class='cards_wrap']"));
 		return element;
 	}
-
+	public static WebElement logoutButton(WebDriver driver) {
+		element=driver.findElement(By.xpath("//*[@id=\"nav-menu\"]/ul/li[3]/a"));
+		return element;
+	}
+	
+	public static WebElement getTextUserName(WebDriver driver) {
+		element=driver.findElement(By.xpath("/html/body/div[1]"));
+		return element;
+	}
 }
