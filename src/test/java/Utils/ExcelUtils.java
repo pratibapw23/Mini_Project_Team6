@@ -278,4 +278,18 @@ public class ExcelUtils {
 		return password;
 
 	}
+	
+	public static String getUserNameA() throws IOException {
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Ankita");
+		String user=sheet.getRow(1).getCell(0).getStringCellValue();
+		return user;
+	}
+	public static String getPasswordA() throws IOException {
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Ankita");
+		String user=sheet.getRow(1).getCell(1).getStringCellValue();
+		return user;
+	}
+	
 }
