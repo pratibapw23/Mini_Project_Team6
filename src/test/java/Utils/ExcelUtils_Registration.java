@@ -71,6 +71,14 @@ static XSSFSheet sheet;
 		String path=sheet.getRow(1).getCell(8).getStringCellValue();
 		return path;
 	}
+	public static String getWrongMobileNo() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData_Dhanashree");
+		long no= (long) sheet.getRow(2).getCell(8).getNumericCellValue();
+		String s=Long.toString(no);
+		return s;
+	}
 	
 	
 		
