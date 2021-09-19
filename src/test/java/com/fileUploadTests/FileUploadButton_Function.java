@@ -39,7 +39,7 @@ public class FileUploadButton_Function {
 	  Assert.assertEquals(typecheck, "submit");
 	  Assert.assertEquals(method, "post");
 	
-	 
+	  System.out.println("Test Case Pass: Upload Button type:"+typecheck+ " method:"+method);
   }
   
   @BeforeMethod
