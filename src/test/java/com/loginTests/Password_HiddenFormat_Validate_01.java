@@ -25,15 +25,13 @@ public class Password_HiddenFormat_Validate_01 {
   @Test
   public void Password_Hidden_Format() throws InterruptedException, IOException {
 	
-		WebElement e;
-		LoginPage.loginButton(driver).click();
-		//driver.findElement(By.linkText("Login")).click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		e=LoginPage.passwordTextBox(driver);
-		e.sendKeys(ExcelUtils.getPassword());
-	    String s = e.getAttribute("type"); 
-		Assert.assertEquals("password",s);
+	     LoginPage.loginButton(driver).click();
+		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUserNameA());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPasswordA());
 		
+	    String s = LoginPage.passwordTextBox(driver).getAttribute("type"); 
+		Assert.assertEquals("password",s);
+		System.out.println("Test Case Pass :Password is in hidden format in the field");
 		
   }
   
