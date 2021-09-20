@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -28,9 +29,10 @@ public class DateJoinedCheck {
 		 Thread.sleep(2000);
 		 
 		 ProfilePage.profileButton(driver).click();
+		 driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		 String ActualValue=ProfilePage.getActualJoinDate(driver).getText();
 		 assertEquals(ActualValue, "Sept. 8, 2021, 3:44 p.m.");
-		 System.out.println("Test Case Verified Successfully");
+		 System.out.println("Test Case Pass: Joined Date Verify");
   }
   @BeforeMethod
   public void beforeMethod() throws IOException {
