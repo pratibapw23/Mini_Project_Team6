@@ -22,8 +22,8 @@ public class Verify_search_06 {
 	  
 	  
 	  LoginPage.loginButton(driver).click();
-	  LoginPage.usernameTextBox(driver).sendKeys("amru");
-      LoginPage.passwordTextBox(driver).sendKeys("EnterPassword123");
+	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+      LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
       LoginPage.SignInButton(driver).submit();
       
       WebElement e=driver.findElement(By.xpath("/html/body/div[2]/div[1]/form/button"));

@@ -42,6 +42,7 @@ public class TC_Register_Userid_1 {
 		RegisterPage.passwordTextbox(driver).sendKeys("Temp@12345");
 		RegisterPage.passwordTextbox2(driver).sendKeys("Temp@12345");
 		RegisterPage.mobileNumber(driver).sendKeys("8787878787");
+		WindowScroll.scrollWindow(driver);
 		Select genderUi = new Select(RegisterPage.gender(driver));
 		genderUi.selectByValue("Female");
 		Thread.sleep(1000);

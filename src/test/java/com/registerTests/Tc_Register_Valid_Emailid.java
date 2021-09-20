@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import Utils.DeleteUser;
 import Utils.ExcelUtils;
 import Utils.ExcelUtils_Registration;
+import Utils.WindowScroll;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.RegisterPage;
 
@@ -39,6 +40,7 @@ public class Tc_Register_Valid_Emailid{
 		RegisterPage.passwordTextbox(driver).sendKeys(ExcelUtils_Registration.getRegPassword());
 		RegisterPage.passwordTextbox2(driver).sendKeys(ExcelUtils_Registration.getRegConfirmPassword());
 		RegisterPage.mobileNumber(driver).sendKeys(ExcelUtils_Registration.getMobileNo());
+		WindowScroll.scrollWindow(driver);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);	
 		RegisterPage.gender_female(driver).click();	
 		driver.manage().timeouts().implicitlyWait(25,TimeUnit.SECONDS);

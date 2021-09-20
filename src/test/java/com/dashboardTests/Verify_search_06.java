@@ -19,8 +19,7 @@ public class Verify_search_06 {
   @Test
   public void Verify_search() throws IOException 
   {
-	  
-	  
+
 	  LoginPage.loginButton(driver).click();
 	  LoginPage.usernameTextBox(driver).sendKeys("amru");
       LoginPage.passwordTextBox(driver).sendKeys("EnterPassword123");

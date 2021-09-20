@@ -38,6 +38,6 @@ public class Verify_DeleteBtn_09 {
 
   @AfterClass
   public void afterClass() {
-	  driver.quit();
+	 driver.quit();
   }
 }

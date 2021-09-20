@@ -1,5 +1,6 @@
 package com.profileDataTests;
 import Utils.ExcelUtils;
+import Utils.WindowScroll;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.testng.annotations.Test;
@@ -39,6 +40,7 @@ public class Profile_UpdateProfile_001 {
 	  driver.findElement(By.name("last_name")).clear();
 	  driver.findElement(By.name("last_name")).sendKeys(ExcelUtils.getLastName_UpdateProfile());
 	  Thread.sleep(2000);
+	 
 	  driver.findElement(By.xpath("//*[@id=\"form1\"]/div/input[2]")).submit();
 	  Thread.sleep(1000);
 	  String ActualFullName[]=driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div[1]/div/div[1]/div[2]")).getText().split(" ");
@@ -77,7 +79,7 @@ public class Profile_UpdateProfile_001 {
   @AfterMethod
   public void afterMethod() 
   {
-	  driver.quit();
+	  //driver.quit();
   }
 
 }

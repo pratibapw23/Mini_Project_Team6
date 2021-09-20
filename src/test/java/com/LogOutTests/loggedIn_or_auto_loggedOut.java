@@ -4,9 +4,16 @@ import org.testng.annotations.Test;
 
 
 import Utils.ExcelUtils;
+import Utils.WebDriverProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
+
 import org.testng.annotations.BeforeMethod;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,41 +24,40 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.safari.SafariDriver.WindowType;
 import org.testng.annotations.AfterMethod;
 
 public class loggedIn_or_auto_loggedOut {
 	WebDriver driver;
 	
   @Test
-  public void LogIn() throws IOException, InterruptedException {
-	  driver.findElement(By.xpath("//*[@id=\"nav-menu\"]/ul/li[2]/a")).click();
-	  driver.findElement(By.name("username")).sendKeys(ExcelUtils.getUsername());
-	  driver.findElement(By.name("password")).sendKeys(ExcelUtils.getPassword());
-	  driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[3]/div/button")).submit();
-      //browser.close();
-	 // browser.find_element_by_tag_name('body').send_keys(Keys.CONTROL + 'w');
+  public void LogIn() throws IOException, InterruptedException, AWTException {
+	  LoginPage.loginButton(driver).click();
+	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+	  LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 	  
-	 // BrowserType.getAllWindowHandles().then(function (handles) { browser.driver.switchTo().window(handles[1]); 
-	 // browser.driver.close();
-	 // browser.driver.switchTo().window(handles[0]); 
-	 
+	  LoginPage.SignInButton(driver).submit();
+	  String url=driver.getCurrentUrl();
+	  System.out.println("Logged In successfully..");
 	  
-	  ArrayList<String> tabs3 = new ArrayList<String> (driver.getWindowHandles());
-	  driver.switchTo().window(tabs3.get(1));
-	  driver.close();
-	  driver.switchTo().window(tabs3.get(2));
+	  Thread.sleep(3000);
+	  Robot robot = new Robot();                          
+	  robot.keyPress(KeyEvent.VK_CONTROL); 
+	  robot.keyPress(KeyEvent.VK_T); 
+	  robot.keyRelease(KeyEvent.VK_CONTROL); 
+	  robot.keyRelease(KeyEvent.VK_T);
+	  Thread.sleep(3000);
+	  ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+	  driver.switchTo().window(tabs.get(1));
 	  
-	 // Thread.sleep(4000);
+	  driver.get("http://test-monk.in/dashboard");
+	  Thread.sleep(3000);
+	  System.out.println("Loggedin in tab..");
+
   }
   @BeforeMethod
   public void beforeMethod() throws IOException {
-	  WebDriverManager.chromedriver().setup();
-	  driver=new ChromeDriver();
-	 FileReader reader=new FileReader("Info.properties");
-	 Properties prop=new Properties();
-	 prop.load(reader); 
-	 String url=prop.getProperty("url");
-	 driver.get(url);
+	 driver=WebDriverProperties.setChromeDriverProperties();
   }
 
   @AfterMethod
