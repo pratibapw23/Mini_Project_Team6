@@ -296,4 +296,36 @@ public class ExcelUtils {
 		
 	}
 	
+	public static String[] getRegistrationDetailsAm() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("Registration_Details");
+		String RegistrationDetailsA[]=new String[6];
+		RegistrationDetailsA[0]=sheet.getRow(3).getCell(0).getStringCellValue();
+		RegistrationDetailsA[1]=sheet.getRow(3).getCell(1).getStringCellValue();
+		RegistrationDetailsA[2]=sheet.getRow(3).getCell(2).getStringCellValue();
+		RegistrationDetailsA[3]=sheet.getRow(3).getCell(3).getStringCellValue();
+		RegistrationDetailsA[4]=sheet.getRow(3).getCell(4).getStringCellValue();
+		RegistrationDetailsA[5]=sheet.getRow(3).getCell(5).getStringCellValue();
+		
+		return RegistrationDetailsA;
+			
+	}
+	
+	
+	public static String[] getDetailsFirstNameAm() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData_Amruta");
+		String RegistrationDetailsA[]=new String[6];
+		RegistrationDetailsA[0]=sheet.getRow(1).getCell(0).getStringCellValue();
+		RegistrationDetailsA[1]=sheet.getRow(1).getCell(1).getStringCellValue();
+		RegistrationDetailsA[2]=sheet.getRow(1).getCell(2).getStringCellValue();
+		RegistrationDetailsA[3]=sheet.getRow(1).getCell(3).getStringCellValue();
+		RegistrationDetailsA[4]=sheet.getRow(1).getCell(4).getStringCellValue();
+		RegistrationDetailsA[5]=sheet.getRow(1).getCell(5).getStringCellValue();
+		
+		return RegistrationDetailsA;
+			
+	}
 }

@@ -50,6 +50,19 @@ public class LoginPage {
 		element=driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[4]/a"));
 		return element;
 	}
+	public static WebElement Home_link_login(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("/html/body/header/nav/div[1]/ul/li[1]/a"));
+		return element;
+	}
+
+
+public static WebElement Home_link(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("/html/body/header/nav/div[1]/ul/li[1]/a"));
+		return element;
+	}
+	
 	
 
 }

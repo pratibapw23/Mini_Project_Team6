@@ -121,5 +121,10 @@ public class RegisterPage {
 		return element;
 	}
 	
-
+	public static WebElement Home_link(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("//*[@id=\"nav-menu\"]/ul/li[1]/a"));
+		return element;
+	}
+	
 }

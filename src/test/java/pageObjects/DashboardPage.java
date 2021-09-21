@@ -75,4 +75,18 @@ WebDriver driver;
 		return element;
 	}
 	
+	
+	public static WebElement Logout1(WebDriver driver) {
+		element=driver.findElement(By.xpath(" /html/body/header/nav/div[1]/ul/li[3]/a"));
+		return element;
+	}
+	
+	
+	
+	public static WebElement uploadfile11(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("/html/body/form/div[4]/button"));
+		return element;
+	}
+	
 }

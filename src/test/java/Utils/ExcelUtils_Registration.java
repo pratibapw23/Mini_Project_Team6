@@ -80,6 +80,23 @@ static XSSFSheet sheet;
 		return s;
 	}
 	
+	public static String username_am() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Amruta");
+		String username=sheet.getRow(0).getCell(0).getStringCellValue();
+		
+		return username;
+	}
+	
+	public static String getRegPassword_am() throws IOException
+	{
+		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
+		sheet=workbook.getSheet("TestData-Amruta");
+		String password=sheet.getRow(0).getCell(1).getStringCellValue();
+		return password;
+	}
+	
 	
 		
 
