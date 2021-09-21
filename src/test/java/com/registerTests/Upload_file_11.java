@@ -1,7 +1,7 @@
-package com.fileUploadTests;
+package com.registerTests;
 
 import org.testng.annotations.Test;
-import static org.testng.Assert.assertFalse;
+
 import Utils.DeleteUser;
 import Utils.ExcelUtils;
 import Utils.ExcelUtils_Registration;
@@ -9,34 +9,25 @@ import Utils.WebDriverProperties;
 import Utils.WindowScroll;
 import pageObjects.RegisterPage;
 
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
-import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 
-public class Verify_ImageUpload {
+public class Upload_file_11 {
 	WebDriver driver;
-	String Path;
-	File file;
 	String email;
-
-	@Test
-	public void verifyImageUpload() throws InterruptedException, IOException {
-		
-		String RegistrationDetails[] = ExcelUtils.getRegistrationDetails1();
+	
+  @Test
+  public void verify_registerWithoutPicture() throws IOException {
+	  String RegistrationDetails[] = ExcelUtils.getRegistrationDetails1();
 		RegisterPage.registerButton(driver).click();
 		RegisterPage.username(driver).sendKeys(RegistrationDetails[0]);
 		RegisterPage.firstName(driver).sendKeys(RegistrationDetails[1]);
@@ -49,9 +40,7 @@ public class Verify_ImageUpload {
 		WindowScroll.scrollWindow(driver);
 		Select genderUi = new Select(RegisterPage.gender(driver));
 		genderUi.selectByValue("Female");
-		WebElement element = RegisterPage.profileImage(driver);
 		
-		element.sendKeys(file.getAbsolutePath());
 		String actualTitlebefore_register=driver.getCurrentUrl();
 		RegisterPage.registerSubmit(driver).click();
 		String actualTitleafter_register=driver.getCurrentUrl();
@@ -60,33 +49,16 @@ public class Verify_ImageUpload {
 
 		email=RegistrationDetails[3];
 		DeleteUser.deleteUser(email, driver);
-		System.out.println("Verified registration successful by uploading profile image");
+		System.out.println("Verified registration successful without uploading profile image");
+  }
+  @BeforeMethod
+  public void beforeMethod() throws IOException {
+	  driver = WebDriverProperties.setChromeDriverProperties();
+  }
 
-		
-	}
-
-	@BeforeClass
-	public void beforeClass() throws IOException {
-		driver = WebDriverProperties.setChromeDriverProperties();
-		
-
-	}
-	@BeforeMethod
-	public void beforeMethod() throws IOException
-	{
-
-		FileReader reader = new FileReader("Info.properties");
-		Properties prop = new Properties();
-		prop.load(reader);
-
-		Path = prop.getProperty("imageScriptPath");
-		
-		file = new File(Path);
-	}
-
-	@AfterClass
-	public void afterClass() {
-		driver.quit();
-	}
+  @AfterMethod
+  public void afterMethod() {
+	  driver.quit();
+  }
 
 }
