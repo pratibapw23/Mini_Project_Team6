@@ -31,7 +31,7 @@ public class SuccessfulReg {
   public void Successful_reg() throws InterruptedException, IOException 
   {
 	  
-	  String RegistrationDetails[] =ExcelUtils.getRegistrationDetailsAm();
+	  String RegistrationDetails[] =ExcelUtils.getRegistrationDetails1();
 	  
 	  RegisterPage.registerButton(driver).click();
 		driver.manage().window().maximize();

@@ -29,8 +29,8 @@ ExcelUtils obj=new ExcelUtils();
   public void Check_logoutVisible() throws IOException, InterruptedException 
   {
 	  LoginPage.loginButton(driver).click();
-	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils_Registration.username_am());
-		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils_Registration.getRegPassword_am());
+	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 		 LoginPage.SignInButton(driver).submit();
 		 
 		 DashboardPage.profileLink(driver).click();
