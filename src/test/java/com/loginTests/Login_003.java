@@ -2,6 +2,7 @@ package com.loginTests;
 
 import org.testng.annotations.Test;
 
+import Utils.ExcelUtils;
 import Utils.ExcelUtils_Registration;
 import pageObjects.DashboardPage;
 import pageObjects.LoginPage;
@@ -24,14 +25,14 @@ public class Login_003 {
   public void HomeButton_working() throws IOException, InterruptedException 
   {
 	  LoginPage.loginButton(driver).click();
-	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils_Registration.username_am());
-		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils_Registration.getRegPassword_am());
+	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 		 LoginPage.SignInButton(driver).submit();
-		 Thread.sleep(2000);
+		 
 		DashboardPage.logoutButton(driver).click(); 
 		
 		
-		 Thread.sleep(1000);
+		 
 		// driver.findElement(By.linkText("Home")).click();
 		 WebElement e=LoginPage.Home_link_login(driver);  
 		 boolean display=e.isDisplayed();
