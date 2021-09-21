@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite">
-  <test thread-count="5" name="Pass_Validate01_testng">
+  <test name="Pass_Validate01_testng">
   
     <classes>
        <class name="com.compatibilityTests.Home_03"/>
@@ -14,14 +14,7 @@
        <class name="com.loginTests.Tc_Invalid_Credentials_04"/>
        <class name="com.loginTests.Tc_login_Dashboard"/>
        
-       <class name="com.registerTests.Alert_Check_28"/>
-       <class name="com.registerTests.Lastname_Verified_Reg"/>
-       <class name="com.registerTests.Password_Rules_01"/>
-       <class name="com.registerTests.Register_18"/>
-       <class name="com.registerTests.Register_Button"/>
-       <class name="com.registerTests.TC_Register_Userid_1"/>
-       <class name="com.registerTests.Tc_Register_Valid_Emailid"/>
-       
+      
        
        <class name="com.dashboardTests.Dashboard_10"/>
        <class name="com.dashboardTests.Dashboard_DeleteButton_05"/>
@@ -34,23 +27,34 @@
        <class name="com.profileDataTests.FirstNameLastNameCheck"/>
        <class name="com.profileDataTests.GenderCheck"/>
        <class name="com.profileDataTests.MobileNumberCheck"/>
-       <class name="com.profileDataTests.Profile_UpdateProfile_001"/>
+       <!--class name="com.profileDataTests.Profile_UpdateProfile_001"/-->
        <class name="com.profileDataTests.Update_ProfilePic_63"/>
        <class name="com.profileDataTests.Validate_ProfileEmail_display_56"/>
       
+       
+       <class name="com.functionalityTests.ChangePassword"/>
+       <!--class name="com.functionalityTests.Home_01"/-->
+       <class name="com.functionalityTests.PasswordEyeButton"/>
+       
+       <class name="com.LogOutTests.Log_Out"/>
+       <class name="com.LogOutTests.loggedIn_or_auto_loggedOut"/>
+       <class name="com.LogOutTests.Verify_LogoutButton"/>
+       
+       
        <class name="com.fileUploadTests.FileUpload_Button_Clickable"/>
        <class name="com.fileUploadTests.FileUploadButton_Function"/>
        <class name="com.fileUploadTests.Verify_FileUploadButton"/>
        <class name="com.fileUploadTests.Verify_ImageUpload"/>
        <class name="com.fileUploadTests.Your_Uploaded_Files_text"/>
        
-       <class name="com.functionalityTests.ChangePassword"/>
-       <class name="com.functionalityTests.Home_01"/>
-       <class name="com.functionalityTests.PasswordEyeButton"/>
+       <class name="com.registerTests.Alert_Check_28"/>
+       <class name="com.registerTests.Lastname_Verified_Reg"/>
+       <class name="com.registerTests.Password_Rules_01"/>
+       <class name="com.registerTests.Register_18"/>
+       <class name="com.registerTests.Register_Button"/>
+       <class name="com.registerTests.TC_Register_Userid_1"/>
+       <class name="com.registerTests.Tc_Register_Valid_Emailid"/>
        
-       <class name="com.LogOutTests.Log_Out"/>
-       <class name="com.LogOutTests.loggedIn_or_auto_loggedOut"/>
-       <class name="com.LogOutTests.Verify_LogoutButton"/>
        
        
    
