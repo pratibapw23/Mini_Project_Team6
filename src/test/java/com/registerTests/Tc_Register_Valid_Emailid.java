@@ -45,15 +45,15 @@ public class Tc_Register_Valid_Emailid{
 		RegisterPage.gender_female(driver).click();	
 		driver.manage().timeouts().implicitlyWait(25,TimeUnit.SECONDS);
 		RegisterPage.registerSubmit(driver).click();
-		
-		
+	
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
-		assertEquals(driver.getTitle(), ExcelUtils.getLoginPageExpectedTitle());
-		
+		String s1 = driver.getTitle();
+		String s2 = "Login to iDrive";
+		Assert.assertEquals(s1, s2);
 		String email=ExcelUtils_Registration.getEmail();
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		DeleteUser.deleteUser(email, driver);
-		
+		System.out.println("Test case Pass: Verify Valid Email Id");
 		
   }
   @BeforeMethod
