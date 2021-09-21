@@ -2,6 +2,7 @@ package com.compatibilityTests;
 
 import org.testng.annotations.Test;
 
+import Utils.ExcelUtils;
 import Utils.ExcelUtils_Registration;
 import Utils.WebDriverProperties;
 import pageObjects.DashboardPage;
@@ -27,9 +28,9 @@ public class HomePage_01 {
   public void VerifyLogin_register() throws IOException, InterruptedException
   {
 	  
-	    HomePage.loginButton(driver).click();   //login button
-		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils_Registration.username_am());
-		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils_Registration.getRegPassword_am());
+	  	LoginPage.loginButton(driver).click();  //login button
+		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 		 LoginPage.SignInButton(driver).submit();
 		 
 		

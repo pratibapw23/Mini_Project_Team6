@@ -45,8 +45,8 @@ public class Login_Verify_Browsers {
 	  s3=chrome_driver.findElement(By.xpath("/html/body/div[1]/div/div/form/span")).getText();	 
 	  Assert.assertEquals(s3,"Welcome");
 	  System.out.println("Logout Successful In Chrome Browser");
-	  LoginPage.usernameTextBox(chrome_driver).sendKeys(ExcelUtils.getUsername());
-	  LoginPage.passwordTextBox(chrome_driver).sendKeys(ExcelUtils.getPassword());
+	  LoginPage.usernameTextBox(chrome_driver).sendKeys(ExcelUtils.getUsernameU());
+	  LoginPage.passwordTextBox(chrome_driver).sendKeys(ExcelUtils.getPasswordU());
 	  LoginPage.SignInButton(chrome_driver).submit();
 	  System.out.println("Login in Chrome Browser with different Account");
 	  
@@ -57,6 +57,7 @@ public class Login_Verify_Browsers {
 
 	  chrome_driver=WebDriverProperties.setChromeDriverProperties();
 	  Edge_driver=WebDriverProperties.setEdgeDriverProperties();
+	 
   }
 
   @AfterTest
@@ -64,7 +65,7 @@ public class Login_Verify_Browsers {
 	  DashboardPage.logoutButton(Edge_driver).click();
 	  DashboardPage.logoutButton(chrome_driver).click();
 	  System.out.println("Logout from all browser");
-	  Assert.assertEquals(s1,s2);
+	  Assert.assertEquals(s1, s2);
 	  System.out.println("TC Passed : Login Sucessful in both browser");
 	  chrome_driver.close();
 	  Edge_driver.close();

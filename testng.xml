@@ -7,8 +7,13 @@
        <class name="com.compatibilityTests.Home_03"/>
        <class name="com.compatibilityTests.Home_04"/>
        <class name="com.compatibilityTests.Verify_Image_Size"/>
+       <class name="com.compatibilityTests.HomePage_01"/>
+       <class name="com.compatibilityTests.Login_Verify_Browsers"/>
+       <class name="com.compatibilityTests.Verify_Image_Size"/>
        
+       <class name="com.loginTests.Check_SignUp_001"/>
        <class name="com.loginTests.Invalid_Password_Login"/>
+       <class name="com.loginTests.Login_003"/>
        <class name="com.loginTests.Pass_Validate_01"/>
        <class name="com.loginTests.Password_HiddenFormat_Validate_01"/>
        <class name="com.loginTests.Tc_Invalid_Credentials_04"/>
@@ -23,7 +28,7 @@
        <class name="com.dashboardTests.Verify_ProfileBtn_02"/>
        <class name="dashboardTests.Verify_search_06"/>
        
-       
+       <class name="com.profileDataTests.DateJoinedCheck"/>
        <class name="com.profileDataTests.FirstNameLastNameCheck"/>
        <class name="com.profileDataTests.GenderCheck"/>
        <class name="com.profileDataTests.MobileNumberCheck"/>
@@ -38,9 +43,10 @@
        
        <class name="com.LogOutTests.Log_Out"/>
        <class name="com.LogOutTests.loggedIn_or_auto_loggedOut"/>
+       <class name="com.LogOutTests.Lout_1"/>
        <class name="com.LogOutTests.Verify_LogoutButton"/>
        
-       
+       <class name="com.fileUploadTests.File_size"/>
        <class name="com.fileUploadTests.FileUpload_Button_Clickable"/>
        <class name="com.fileUploadTests.FileUploadButton_Function"/>
        <class name="com.fileUploadTests.Verify_FileUploadButton"/>

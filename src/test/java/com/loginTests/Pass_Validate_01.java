@@ -30,8 +30,8 @@ public class Pass_Validate_01 {
   @Test//(groups= {"Login"})
   public void verifyUsername() throws IOException, InterruptedException {
 	 LoginPage.loginButton(driver).click();
-	 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername1());
-	 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword1());
+	 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+	 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 	 LoginPage.SignInButton(driver).submit();
 	 Thread.sleep(2000);
 	 String name[]=LoginPage.findFullName(driver).getText().split(" ");

@@ -35,7 +35,7 @@ ExcelUtils obj=new ExcelUtils();
 		 
 		 DashboardPage.profileLink(driver).click();
 		 Thread.sleep(1000);
-		// driver.findElement(By.linkText("Logout")).click();
+		
 		WebElement e=ProfilePage.logout_Button(driver);
 		boolean visible=e.isDisplayed();
 		if(visible)

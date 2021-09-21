@@ -30,10 +30,7 @@ public class Login_003 {
 		 LoginPage.SignInButton(driver).submit();
 		 
 		DashboardPage.logoutButton(driver).click(); 
-		
-		
-		 
-		// driver.findElement(By.linkText("Home")).click();
+	
 		 WebElement e=LoginPage.Home_link_login(driver);  
 		 boolean display=e.isDisplayed();
 		 if(display)
