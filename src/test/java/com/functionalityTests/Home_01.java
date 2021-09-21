@@ -53,8 +53,8 @@ public class Home_01 {
 	  
 	  //LoginPage
 	  HomePage.loginOnRegisterPage(driver).click();
-	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername1());
-	  LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword1());
+	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+	  LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 	  LoginPage.SignInButton(driver).click();
 	  String ActualDashboardURL= driver.getCurrentUrl();
 	  assertEquals(urls[3],ActualDashboardURL);

@@ -27,13 +27,13 @@
        <class name="com.profileDataTests.FirstNameLastNameCheck"/>
        <class name="com.profileDataTests.GenderCheck"/>
        <class name="com.profileDataTests.MobileNumberCheck"/>
-       <!--class name="com.profileDataTests.Profile_UpdateProfile_001"/-->
+       <class name="com.profileDataTests.Profile_UpdateProfile_001"/>
        <class name="com.profileDataTests.Update_ProfilePic_63"/>
        <class name="com.profileDataTests.Validate_ProfileEmail_display_56"/>
       
        
        <class name="com.functionalityTests.ChangePassword"/>
-       <!--class name="com.functionalityTests.Home_01"/-->
+       <class name="com.functionalityTests.Home_01"/>
        <class name="com.functionalityTests.PasswordEyeButton"/>
        
        <class name="com.LogOutTests.Log_Out"/>
@@ -54,6 +54,7 @@
        <class name="com.registerTests.Register_Button"/>
        <class name="com.registerTests.TC_Register_Userid_1"/>
        <class name="com.registerTests.Tc_Register_Valid_Emailid"/>
+       <class name="com.registerTests.Upload_file_11"/>
        
        
        
