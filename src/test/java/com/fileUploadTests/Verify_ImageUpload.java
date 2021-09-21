@@ -86,7 +86,7 @@ public class Verify_ImageUpload {
 
 	@AfterClass
 	public void afterClass() {
-		//driver.quit();
+		driver.quit();
 	}
 
 }

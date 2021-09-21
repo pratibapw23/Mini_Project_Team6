@@ -26,8 +26,8 @@ public class Log_Out {
   @Test
   public void Log_Out_Successfully() throws IOException, InterruptedException {
 	  LoginPage.loginButton(driver).click();
-		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername1());
-		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword1());
+		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsernameU());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPasswordU());
 		 LoginPage.SignInButton(driver).submit();
 		 Thread.sleep(2000);
 		 ProfilePage.logoutButton(driver).click();

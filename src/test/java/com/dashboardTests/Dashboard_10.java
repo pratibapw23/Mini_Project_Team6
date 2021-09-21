@@ -19,8 +19,8 @@ public class Dashboard_10 {
   public void verifyDownloadButton() throws IOException 
   {
 	  LoginPage.loginButton(driver).click();
-	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUserName_UpdateProfile());
-	  LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword_UpdateProfile());
+	  LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+	  LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 	  LoginPage.SignInButton(driver).submit();
 	  boolean Checkdownloadbtn = DashboardPage.downloadButton(driver).isDisplayed();
 	  if(Checkdownloadbtn)
@@ -34,7 +34,7 @@ public class Dashboard_10 {
 
   @AfterMethod
   public void afterMethod() {
-	  driver.quit();
+	 driver.quit();
 	  }
 
 }

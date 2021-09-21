@@ -31,7 +31,7 @@ public class DeleteUser {
 		driver.findElement(By.name("index")).click();
 		driver.findElement(By.xpath("//*[@id=\"content\"]/form/div/input[4]")).click();
 		
-		driver.findElement(By.xpath("//*[@id=\"nav-sidebar\"]/div[2]/table/tbody/tr[2]/th/a")).click(); //user_datas link
+		driver.findElement(By.xpath("//*[@id=\"nav-sidebar\"]/div[3]/table/tbody/tr[2]/th/a")).click(); //user_datas link
 		driver.findElement(By.xpath("//*[@id=\"result_list\"]/tbody/tr[1]/td/input")).click();
 		
 		Select	userDatas = new Select(driver.findElement(By.name("action")));

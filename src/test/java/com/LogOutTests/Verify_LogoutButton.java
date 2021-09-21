@@ -22,8 +22,8 @@ public class Verify_LogoutButton {
   @Test
   public void CheckLogout() throws Exception {
 	     LoginPage.loginButton(driver).click();
-		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUserNameA());
-		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPasswordA());
+		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsernameU());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPasswordU());
 		 LoginPage.SignInButton(driver).submit();
 		 Thread.sleep(2000);
 		 driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);

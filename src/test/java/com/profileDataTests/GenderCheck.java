@@ -25,15 +25,15 @@ public class GenderCheck {
   public void verifyGender() throws IOException, InterruptedException {
 	  
 	  LoginPage.loginButton(driver).click();
-		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername1());
-		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword1());
+		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsernameU());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPasswordU());
 		 LoginPage.SignInButton(driver).submit();
 		 Thread.sleep(2000);
 		 
 	  LoginPage.profileLink(driver).click();
 	  
 	  String ActualValue=ProfilePage.getActualGender(driver).getText();
-	  assertEquals(ActualValue, "Female");
+	  assertEquals(ActualValue, "Male");
 	  
 	  System.out.println("Check with the Gender = Female");
 	  System.out.println("Gender Test Case Verified Successfully");

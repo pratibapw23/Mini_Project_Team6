@@ -26,7 +26,7 @@ public class PasswordEyeButton {
 	@Test
 	  public void verifyEyeButton() throws IOException, InterruptedException {
 		LoginPage.loginButton(driver).click();
-		LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getOldPasswordChangePassword());
+		LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 		assertEquals(LoginPage.passwordTextBox(driver).getAttribute("type"),"password");
 		ProfilePage.eyeButton(driver).click();
 		assertEquals(LoginPage.passwordTextBox(driver).getAttribute("type"),"text");

@@ -28,8 +28,8 @@ public class Dashboard_DeleteButton_05 {
   @Test//(groups= {"Login"})
   public void Vrfy_DeleteFile() throws IOException, InterruptedException {
 	     LoginPage.loginButton(driver).click();
-		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsernameU());
-		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPasswordU());
+		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 		 LoginPage.SignInButton(driver).submit();
 		 
 		 DashboardPage.deleteButton(driver).click();
@@ -37,7 +37,7 @@ public class Dashboard_DeleteButton_05 {
 		 driver.get("http://test-monk.in/dashboard");
 		 driver.navigate().refresh();
 		 
-		 DashboardPage.Searchbar(driver).sendKeys("Friends2");
+		 
 		 String ActualValue=DashboardPage.getActualFilename(driver).getText();
 		 Assert.assertNotSame(ActualValue,"NAME=FRIENDS2.JPG");
 

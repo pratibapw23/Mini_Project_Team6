@@ -24,8 +24,8 @@ public class Login_Verify_Browsers {
 	  
 		 LoginPage.loginButton(Edge_driver).click();
 		 LoginPage.loginButton(Edge_driver).click();
-		 LoginPage.usernameTextBox(Edge_driver).sendKeys(ExcelUtils.getUserNameA());
-		 LoginPage.passwordTextBox(Edge_driver).sendKeys(ExcelUtils.getPasswordA());
+		 LoginPage.usernameTextBox(Edge_driver).sendKeys(ExcelUtils.getUsername());
+		 LoginPage.passwordTextBox(Edge_driver).sendKeys(ExcelUtils.getPassword());
 		 LoginPage.SignInButton(Edge_driver).submit();
 		 System.out.println("Login in MicrosoftEdge");
 		 s2=DashboardPage.getTextUserName(Edge_driver).getText();
@@ -36,8 +36,8 @@ public class Login_Verify_Browsers {
 
 	  chrome_driver.manage().window().maximize();
 	  LoginPage.loginButton(chrome_driver).click();
-	  LoginPage.usernameTextBox(chrome_driver).sendKeys(ExcelUtils.getUserNameA());
-	  LoginPage.passwordTextBox(chrome_driver).sendKeys(ExcelUtils.getPasswordA());
+	  LoginPage.usernameTextBox(chrome_driver).sendKeys(ExcelUtils.getUsername());
+	  LoginPage.passwordTextBox(chrome_driver).sendKeys(ExcelUtils.getPassword());
 	  LoginPage.SignInButton(chrome_driver).submit();
 	  System.out.println("Login in Chrome Browser");
 	  s1= s2=DashboardPage.getTextUserName(chrome_driver).getText();

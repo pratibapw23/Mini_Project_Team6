@@ -23,13 +23,13 @@ public class FirstNameLastNameCheck {
   @Test//(groups= {"Login"})
   public void verifyUsername() throws IOException, InterruptedException {
 	 LoginPage.loginButton(driver).click();
-	 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsernameChangePassword());
-	 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getOldPasswordChangePassword());
+	 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+	 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 	 LoginPage.SignInButton(driver).submit();
 	 Thread.sleep(2000);
 	 ProfilePage.profileButton(driver).click();
 	 String actualValue = driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div[1]/div/div[1]/div[2]")).getText();
-	 assertEquals(actualValue, "John Snow");
+	 assertEquals(actualValue, "amruta xyz");
 	 System.out.println("Check with the First Name and Last Name");
 	 System.out.println("Test Case Verified Successfully");
   } 

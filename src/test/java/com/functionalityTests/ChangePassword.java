@@ -31,8 +31,8 @@ public class ChangePassword {
 		
 		System.out.println("Login with old Password");
 		LoginPage.loginButton(driver).click();;
-		LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsernameChangePassword());
-		LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getOldPasswordChangePassword());
+		LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+		LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 		LoginPage.SignInButton(driver).submit();
 		ProfilePage.profileButton(driver).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -42,12 +42,12 @@ public class ChangePassword {
 		js.executeScript("arguments[0].click()", Element);
 		
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
-		ProfilePage.changePasswordTextbox(driver).sendKeys(ExcelUtils.getNewPasswordChangePassword());
+		ProfilePage.changePasswordTextbox(driver).sendKeys(ExcelUtils.getResetPass());
 		ProfilePage.changePasswordFinal(driver).click();
 		System.out.println("Password Changed Successfully");
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsernameChangePassword());
-		LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getNewPasswordChangePassword());
+		LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+		LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getResetPass());
 		LoginPage.SignInButton(driver).submit();
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		assertEquals(driver.getTitle(), "Dashboard");
@@ -59,7 +59,7 @@ public class ChangePassword {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement Element2 = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div[2]/ul/li[3]/button"));
 		js.executeScript("arguments[0].click()", Element2);
-		ProfilePage.changePasswordTextbox(driver).sendKeys(ExcelUtils.getOldPasswordChangePassword());
+		ProfilePage.changePasswordTextbox(driver).sendKeys(ExcelUtils.getPassword());
 		ProfilePage.changePasswordFinal(driver).click();
 		System.out.println("Reset Completed");
 	  } 

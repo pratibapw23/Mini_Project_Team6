@@ -26,8 +26,8 @@ public class Password_HiddenFormat_Validate_01 {
   public void Password_Hidden_Format() throws InterruptedException, IOException {
 	
 	     LoginPage.loginButton(driver).click();
-		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUserNameA());
-		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPasswordA());
+		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 		
 	    String s = LoginPage.passwordTextBox(driver).getAttribute("type"); 
 		Assert.assertEquals("password",s);

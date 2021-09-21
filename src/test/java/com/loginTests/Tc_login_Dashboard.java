@@ -28,8 +28,8 @@ public class Tc_login_Dashboard {
   @Test//(groups= {"Login"})
   public void LoginUser() throws IOException, InterruptedException {
 	  LoginPage.loginButton(driver).click();
-		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername1());
-		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword1());
+		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 		 LoginPage.SignInButton(driver).submit();
 		 Thread.sleep(2000);
 	  String actualTitle = driver.getTitle();

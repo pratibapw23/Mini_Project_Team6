@@ -25,8 +25,8 @@ public class Your_Uploaded_Files_text {
   @Test
   public void Text_Fields_Present() throws IOException, InterruptedException {
 	  LoginPage.loginButton(driver).click();
-		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername1());
-		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword1());
+		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsernameU());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPasswordU());
 		 LoginPage.SignInButton(driver).submit();
 		 Thread.sleep(2000);
 	  Boolean Display = driver.findElement(By.xpath("/html/body/div[2]/div[1]")).isDisplayed();

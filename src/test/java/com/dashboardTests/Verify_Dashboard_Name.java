@@ -25,7 +25,7 @@ public class Verify_Dashboard_Name {
       LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
       LoginPage.SignInButton(driver).submit();
       String actualValue =driver.findElement(By.xpath("/html/body/div[1]")).getText();
-      assertEquals(actualValue, "Hello pratibha wabale");
+      assertEquals(actualValue, "Hello amruta xyz");
       System.out.println("Check with the Name on the Dashboard");
  	  System.out.println("Test Case Verified Successfully");
   }

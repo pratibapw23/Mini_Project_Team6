@@ -14,7 +14,7 @@ public class ExcelUtils {
 	public static String getUsername() throws IOException
 	{
 		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
-		sheet=workbook.getSheet("Credentials");
+		sheet=workbook.getSheet("UserNamePass");
 		String username=sheet.getRow(1).getCell(0).getStringCellValue();
 		return username;
 		
@@ -22,7 +22,7 @@ public class ExcelUtils {
 	public static String getPassword() throws IOException
 	{
 		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
-		sheet=workbook.getSheet("Credentials");
+		sheet=workbook.getSheet("UserNamePass");
 		String password=sheet.getRow(1).getCell(1).getStringCellValue();
 		return password;
 
@@ -97,11 +97,11 @@ public class ExcelUtils {
 		String uname=sheet.getRow(10).getCell(1).getStringCellValue();
 		return uname;
 	}
-	public static String getNewPasswordChangePassword() throws IOException
+	public static String getResetPass() throws IOException
 	{
 		workbook=new XSSFWorkbook(".//Files//User_Credentials.xlsx");
-		sheet=workbook.getSheet("Credentials");
-		String uname=sheet.getRow(10).getCell(2).getStringCellValue();
+		sheet=workbook.getSheet("UserNamePass");
+		String uname=sheet.getRow(1).getCell(3).getStringCellValue();
 		return uname;
 	}
 	public static String getRegisterPageExpectedTitle() throws IOException

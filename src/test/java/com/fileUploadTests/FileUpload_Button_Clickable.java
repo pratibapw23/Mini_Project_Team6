@@ -27,8 +27,8 @@ public class FileUpload_Button_Clickable {
   @Test
   public void upload_file_Button() throws IOException, InterruptedException {
 	  LoginPage.loginButton(driver).click();
-		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername1());
-		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword1());
+		 LoginPage.usernameTextBox(driver).sendKeys(ExcelUtils.getUsername());
+		 LoginPage.passwordTextBox(driver).sendKeys(ExcelUtils.getPassword());
 		 LoginPage.SignInButton(driver).submit();
 		 Thread.sleep(2000);
 		 DashboardPage.uploadFileLink(driver).click();
