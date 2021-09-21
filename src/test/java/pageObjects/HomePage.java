@@ -51,4 +51,9 @@ WebDriver driver;
 		element=driver.findElement(By.xpath("//*[@id=\"home\"]/div/div[2]/p" ));
 		return element;
 	}
+	public static WebElement Home(WebDriver driver)
+	{
+		element=driver.findElement(By.xpath("/html/body/header/nav/div[1]/ul/li[1]/a"));
+		return element;
+	}
 }
