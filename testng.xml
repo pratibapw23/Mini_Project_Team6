@@ -4,63 +4,64 @@
   <test name="Pass_Validate01_testng">
   
     <classes>
-       <class name="com.compatibilityTests.Home_03"/>
-       <class name="com.compatibilityTests.Home_04"/>
-       <class name="com.compatibilityTests.Verify_Image_Size"/>
-       <class name="com.compatibilityTests.HomePage_01"/>
-       <class name="com.compatibilityTests.Login_Verify_Browsers"/>
-       <class name="com.compatibilityTests.Verify_Image_Size"/>
+       <class name="com.compatibilityTests.TC_MultiBrowserSupport"/>
+       <class name="com.compatibilityTests.TC_HomePage_Usability"/>
+       <class name="com.compatibilityTests.TC_Verify_Image_Size"/>
+       <class name="com.compatibilityTests.TC_HomePage_LoginRegisterButton"/>
+       <class name="com.compatibilityTests.TC_Verify_Image_Size"/>
        
-       <class name="com.loginTests.Check_SignUp_001"/>
-       <class name="com.loginTests.Invalid_Password_Login"/>
-       <class name="com.loginTests.Login_003"/>
-       <class name="com.loginTests.Pass_Validate_01"/>
-       <class name="com.loginTests.Password_HiddenFormat_Validate_01"/>
-       <class name="com.loginTests.Tc_Invalid_Credentials_04"/>
-       <class name="com.loginTests.Tc_login_Dashboard"/>
+       <class name="com.loginTests.TC_Verify_SignUpLink"/>
+       <class name="com.loginTests.TC_Verify_Invalid_Password_Login"/>
+       <class name="com.loginTests.TC_Verify_HomeButton"/>
+       <class name="com.loginTests.TC_Verify_UserName"/>
+       <class name="com.loginTests.TC_Verify_Password_HiddenFormat"/>
+       <class name="com.loginTests.TC_Verify_Invalid_Credentials"/>
+       <class name="com.loginTests.TC_Verify_login_Dashboard"/>
        
       
        
-       <class name="com.dashboardTests.Dashboard_10"/>
-       <class name="com.dashboardTests.Dashboard_DeleteButton_05"/>
-       <class name="com.dashboardTests.Verify_Dashboard_Name"/>
-       <class name="com.dashboardTests.Verify_DeleteBtn_09"/>
-       <class name="com.dashboardTests.Verify_ProfileBtn_02"/>
-       <class name="dashboardTests.Verify_search_06"/>
+       <class name="com.dashboardTests.TC_Verify_Download_Button"/>
+       <class name="com.dashboardTests.TC_Verify_Dashboard_DeleteButton"/>
+       <class name="com.dashboardTests.TC_Verify_Dashboard_Name"/>
+       <class name="com.dashboardTests.TC_Verify_DeleteButton"/>
+       <class name="com.dashboardTests.TC_Verify_ProfileButton"/>
        
-       <class name="com.profileDataTests.DateJoinedCheck"/>
-       <class name="com.profileDataTests.FirstNameLastNameCheck"/>
-       <class name="com.profileDataTests.GenderCheck"/>
-       <class name="com.profileDataTests.MobileNumberCheck"/>
-       <class name="com.profileDataTests.Profile_UpdateProfile_001"/>
-       <class name="com.profileDataTests.Update_ProfilePic_63"/>
-       <class name="com.profileDataTests.Validate_ProfileEmail_display_56"/>
+       
+       <class name="com.profileDataTests.TC_Verify_DateJoinedCheck"/>
+       <class name="com.profileDataTests.TC_Verify_FirstNameLastName"/>
+       <class name="com.profileDataTests.TC_Verify_Gender"/>
+       <class name="com.profileDataTests.TC_Verify_MobileNumber"/>
+       <class name="com.profileDataTests.TC_Verify_UpdateProfile"/>
+       <class name="com.profileDataTests.TC_Verify_Update_ProfilePicture"/>
+       <class name="com.profileDataTests.TC_Verify_ProfileEmail_Display"/>
       
        
-       <class name="com.functionalityTests.ChangePassword"/>
-       <class name="com.functionalityTests.Home_01"/>
-       <class name="com.functionalityTests.PasswordEyeButton"/>
+       <class name="com.functionalityTests.TC_Verify_ChangePassword"/>
+       <class name="com.functionalityTests.TC_Verify_HyperLinksConnected"/>
+       <class name="com.functionalityTests.TC_Verify_PasswordEyeButton"/>
        
-       <class name="com.LogOutTests.Log_Out"/>
-       <class name="com.LogOutTests.loggedIn_or_auto_loggedOut"/>
-       <class name="com.LogOutTests.Lout_1"/>
-       <class name="com.LogOutTests.Verify_LogoutButton"/>
+       <class name="com.LogOutTests.TC_Verify_Logout_Successful"/>
+       <class name="com.LogOutTests.TC_Verify_loggedIn_or_auto_loggedOut"/>
+       <class name="com.LogOutTests.TC_Verify_Logout_Button"/>
+       <class name="com.LogOutTests.TC_Verify_LogoutButtonPresent"/>
        
-       <class name="com.fileUploadTests.File_size"/>
-       <class name="com.fileUploadTests.FileUpload_Button_Clickable"/>
-       <class name="com.fileUploadTests.FileUploadButton_Function"/>
-       <class name="com.fileUploadTests.Verify_FileUploadButton"/>
-       <class name="com.fileUploadTests.Verify_ImageUpload"/>
-       <class name="com.fileUploadTests.Your_Uploaded_Files_text"/>
+       <class name="com.fileUploadTests.TC_Verify_File_size"/>
+       <class name="com.fileUploadTests.TC_Verify_FileUpload_Button_Clickable"/>
+       <class name="com.fileUploadTests.TC_Verify_FileUploadButton"/>
+       <class name="com.fileUploadTests.TC_Verify_FileUploadButton_Enabled"/>
+       <class name="com.fileUploadTests.TC_Verify_ImageUpload"/>
+       <class name="com.fileUploadTests.TC_Verify_UploadedFiles_Displayed"/>
        
-       <class name="com.registerTests.Alert_Check_28"/>
-       <class name="com.registerTests.Lastname_Verified_Reg"/>
-       <class name="com.registerTests.Password_Rules_01"/>
-       <class name="com.registerTests.Register_18"/>
-       <class name="com.registerTests.Register_Button"/>
-       <class name="com.registerTests.TC_Register_Userid_1"/>
-       <class name="com.registerTests.Tc_Register_Valid_Emailid"/>
-       <class name="com.registerTests.Upload_file_11"/>
+       <class name="com.registerTests.TC_Catch_Alert"/>
+       <class name="com.registerTests.TC_Verify_FirstName"/>
+       <class name="com.registerTests.TC_Verify_Lastname"/>
+       <class name="com.registerTests.TC_Verify_Password_Rules"/>
+       <class name="com.registerTests.TC_Verify_Register"/>
+       <class name="com.registerTests.TC_Verify_Register_Button"/>
+       <class name="com.registerTests.TC_Register_Userid"/>
+       <class name="com.registerTests.TC_Register_Valid_Emailid"/>
+       <class name="com.registerTests.TC_Verify_Upload_file"/>
+       <class name="com.registerTests.TC_Verify_SuccessfulReg"/>
        
        
        
